@@ -20,3 +20,5 @@ Funcionamento
 3. Ao pressionar STOP (S0), o circuito abre e desliga o sistema.
 gulamo.jamal@outlook.com
 brevemito.com
+### 🖼️ Diagrama
+![Diagrama do circuito](diagrama-liga-desliga.png)
