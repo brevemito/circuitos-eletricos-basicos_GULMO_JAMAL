@@ -21,4 +21,4 @@ Funcionamento
 gulamo.jamal@outlook.com
 brevemito.com
 ### 🖼️ Diagrama
-![Diagrama do circuito](diagrama-liga-desliga.png)
+![Diagrama do circuito](diagrama-liga-desliga.png.png)
