@@ -1,0 +1,47 @@
+# Comando Liga/Desliga com Sinalização (Arranque Directo Trifasico)
+
+##  Objetivo
+Implementar um circuito de comando para ligar e desligar uma carga, com indicação visual de estado (pronto, funcionamento e falha).
+
+---
+
+##  Componentes
+- S0 → Botão STOP (Normalmente Fechado)
+- S1 → Botão START (Normalmente Aberto)
+- K1 → Contator
+- F2 → Relé térmico (proteção contra sobrecarga)
+- F → Fusíveis (proteção contra curto-circuito)
+- M → motor TRIFASICO
+
+### Sinalização
+- H1 → Motor em funcionamento
+- H2 → Sistema pronto para funcionamento
+- H3 → Sobrecarga (ligado ao contacto NA 97-98 do relé térmico)
+
+---
+
+## Funcionamento
+1. Quando o sistema é energizado, H2 acende indicando que está pronto para operação.
+2. Ao pressionar START (S1), o contator K1 é energizado.
+3. A carga entra em funcionamento e H1 acende.
+4. O contacto auxiliar de K1 mantém o circuito ativo (auto-retenção).
+5. Ao pressionar STOP (S0), o circuito abre e a carga desliga.
+6. Em caso de sobrecarga, o relé térmico atua, desliga o circuito e H3 acende.
+
+---
+
+## ⚠️ Proteções
+- Fusíveis para proteção contra curto-circuito
+- Relé térmico ajustado à corrente nominal da carga
+- Ligação à terra (quando aplicável)
+
+---
+
+## 🖼️ Diagrama
+![Diagrama do circuito](diagrama-liga-desliga.png.png)
+
+
+---
+
+## 📬 Autor
+Gulamo Jamal | gulamo.jamal@outlook.com | brevemito.com
