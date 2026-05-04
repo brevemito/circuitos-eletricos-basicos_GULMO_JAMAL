@@ -1,6 +1,7 @@
 # Circuitos Elétricos Básicos
 
 Este repositório apresenta exemplos práticos de circuitos elétricos utilizados em instalações e automação industrial.
+Gulamo Jamal | gulamo.jamal@outlook.com
 
 ---
 
