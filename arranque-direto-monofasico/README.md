@@ -38,7 +38,7 @@ Implementar um sistema de comando para arranque directo de um motor monofásico 
 ---
 
 ## 🖼️ Diagrama
-![Diagrama do circuito](diagrama-arranque-direto.png)
+![Diagrama do circuito](arranque-direto-monofasico/arranque-direto-monofasico.png)
 
 ---
 
