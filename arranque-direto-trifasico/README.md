@@ -39,7 +39,7 @@ Implementar um sistema de arranque direto de motor trifásico com sinalização 
 ---
 
 ## 🖼️ Diagrama
-![Diagrama do circuito trifasico](arranque-direto-trifasico/arranque-direto-trifasico.png)
+![Diagrama do circuito trifasico](arranque-direto-trifasico.png)
 
 ---
 
