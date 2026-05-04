@@ -1,35 +1,23 @@
 # Circuitos Elétricos Básicos
 
-Este repositório apresenta exemplos práticos de circuitos elétricos utilizados em instalações e automação industrial.
-Gulamo Jamal | gulamo.jamal@outlook.com
+Coleção de projectos práticos de comandos elétricos aplicados à indústria e instalações.
 
 ---
 
-##  Projeto 1: Comando Liga/Desliga
+## 📂 Projectos
 
-###  Objetivo
-Implementar um circuito simples para ligar e desligar uma carga utilizando botão START e STOP.
+###  Comando Liga/Desliga
+👉 [Ver projeto](./liga-desliga)
 
----
-
-###  Componentes
-- S0 → Botão STOP (Normalmente Fechado)
-- S1 → Botão START (Normalmente Aberto)
-- K1 → Contator
-- Contato auxiliar de K1
+### ⚡ Arranque Direto de Motor Monofásico
+👉 [Ver projeto](./arranque-direto-monofasico)
 
 ---
 
-###  Funcionamento
-1. Ao pressionar START (S1), o contator K1 é energizado.  
-2. O contato auxiliar mantém o circuito ligado (auto-retenção).  
-3. Ao pressionar STOP (S0), o circuito abre e desliga o sistema.
+##  Objetivo
+Demonstrar conhecimento técnico através de exemplos reais e documentados.
 
 ---
 
-### 🖼️ Diagrama
-![Diagrama do circuito](diagrama-liga-desliga.png.png)
-
----
-
-brevemito.com
+## 📬 Autor
+Gulamo Jamal | Gulamo.jamal@outlook.com | brevemito.com 
