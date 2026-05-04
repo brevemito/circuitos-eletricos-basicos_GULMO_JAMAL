@@ -7,7 +7,7 @@ Coleção de projectos práticos de comandos elétricos aplicados à indústria 
 ## 📂 Projectos
 
 ###  Comando Liga/Desliga
-👉 [Ver projeto](./liga-desliga)
+👉 [Ver projeto](./Arranque Directo Trifasico)
 
 ### ⚡ Arranque Direto de Motor Monofásico
 👉 [Ver projeto](./arranque-direto-monofasico)
