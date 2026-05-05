@@ -44,7 +44,7 @@ Implementar um sistema de comando para inversão do sentido de rotação de um m
 ---
 
 ## 🖼️ Diagrama
-![Diagrama da inversão de marcha](diagrama-inversao.png)
+![Diagrama da inversão de marcha](inversao-de-marcha/Inversao_de_Marcha_de_Motor Trifasico.png)
 
 ---
 
