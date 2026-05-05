@@ -12,6 +12,9 @@ Coleção de projectos práticos de comandos elétricos aplicados à indústria 
 ### ⚡ Arranque Direto de Motor Monofásico
 👉 [Ver projeto](./arranque-direto-monofasico)
 
+### 🔄 Inversão de Marcha
+👉 [Ver projeto](./inversao-de-marcha)
+
 ---
 
 ##  Objetivo
