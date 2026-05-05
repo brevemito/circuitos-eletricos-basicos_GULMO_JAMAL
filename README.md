@@ -1,3 +1,4 @@
+👉 Este projeto faz parte do portfólio técnico publicado em: https://brevemito.com por Gulamo Jamal
 # Circuitos Elétricos Básicos
 
 Coleção de projectos práticos de comandos elétricos aplicados à indústria e instalações.
