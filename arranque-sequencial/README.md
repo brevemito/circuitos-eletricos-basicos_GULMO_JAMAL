@@ -2,8 +2,7 @@
 
 ## Descrição
 
-Sistema de comando eléctrico industrial para arranque sequencial manual de três motores trifásicos (M1, M2 e M3), utilizando interbloqueio lógico entre contactores.
-
+Sistema de comando eléctrico industrial para arranque sequencial manual de três motores trifásicos (M1, M2 e M3).
 - M2 depende de M1  
 - M3 depende de M2  
 - Sem utilização de relé temporizador  
@@ -24,3 +23,6 @@ Sistema de comando eléctrico industrial para arranque sequencial manual de trê
 ## Diagrama
 
 ![Arranque Sequencial - Força e Comando](../imagens/arranque-sequencial.png)
+
+## Autor: Gulamo Jamal | غلام جمال | gulamo.jamal@outlook.com
+[![Website](https://img.shields.io/badge/Website-brevemito.com-blue)](https://brevemito.com)
