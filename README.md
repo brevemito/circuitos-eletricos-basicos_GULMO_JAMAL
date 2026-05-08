@@ -16,6 +16,8 @@ Coleção de projectos práticos de comandos elétricos aplicados à indústria 
 ### 🔄 Inversão de Marcha
 👉 [Ver projeto](./inversao-de-marcha)
 
+###  Arranque Sequencial
+👉 [Ver projeto](./arranque-sequencial)
 ---
 
 ##  Objetivo
