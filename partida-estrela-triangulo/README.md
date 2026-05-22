@@ -37,7 +37,7 @@ O sistema inicia o motor em ligação estrela para reduzir a corrente de arranqu
 ---
 ## Diagrama de Comando
 
-![Diagrama de comando estrela-triângulo](imagens/diagrama-partida-estrela-triangulo.png)
+![Diagrama de comando estrela-triângulo](../imagens/diagrama-partida-estrela-triangulo.png)
 ---
 
 ## Segurança
