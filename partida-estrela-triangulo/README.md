@@ -39,6 +39,9 @@ O sistema inicia o motor em ligação estrela para reduzir a corrente de arranqu
 
 ![Diagrama de comando estrela-triângulo](../imagens/diagrama-partida-estrela-triangulo.png)
 ---
+## Partida em Estrela (K1 + K3 ativados)
+
+Neste estágio inicial, o motor é alimentado em ligação estrela através do acionamento das contatoras K1 (principal) e K3 (estrela). Esta configuração reduz a tensão aplicada a cada enrolamento para aproximadamente 58% da tensão de linha, diminuindo a corrente de arranque e o esforço mecânico durante a partida.
 ![Motor acionado em estrela após K1 e K3](../imagens/Diagrama-partida-estrela-triangulo-apos-acionamento-de-K1-e-K3-motor-acionado-em-estrela.png)
 ## Segurança
 ---
