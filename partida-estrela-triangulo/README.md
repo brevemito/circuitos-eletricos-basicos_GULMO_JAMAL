@@ -41,8 +41,21 @@ O sistema inicia o motor em ligação estrela para reduzir a corrente de arranqu
 ---
 ## Partida em Estrela (K1 + K3 ativados)
 
-Neste estágio inicial, o motor é alimentado em ligação estrela através do acionamento das contatoras K1 (principal) e K3 (estrela). Esta configuração reduz a tensão aplicada a cada enrolamento para aproximadamente 58% da tensão de linha, diminuindo a corrente de arranque e o esforço mecânico durante a partida.
-![Motor acionado em estrela após K1 e K3](../imagens/Diagrama-partida-estrela-triangulo-apos-acionamento-de-K1-e-K3-motor-acionado-em-estrela.png)
+Neste estágio inicial, o motor é alimentado em ligação estrela através do acionamento de K1 (principal) e K3 (estrela). Esta configuração reduz a tensão aplicada a cada enrolamento para aproximadamente 58% da tensão de linha, diminuindo a corrente de arranque e o esforço mecânico durante a partida.
+
+![Motor acionado em estrela após K1 e K3](../imagens/Diagrama-partida-estrela-triangulo-apos-acionamento-de-K1-e-K3-motor-acionado-em-estrela.png) 
+---
+## Funcionamento do Arranque em Triângulo
+
+Após a temporização do sistema, K3 (estrela) é desligada e K2 é acionado em conjunto com K1. Nesta fase, o motor passa a operar em ligação triângulo, recebendo tensão total de linha e funcionando à sua potência nominal.
+
+![Diagrama partida estrela-triângulo em triângulo](../imagens/Diagrama-partida-estrela-triangulo-apos-10-segundos-desliga-K3-e-aciona-contatora-K2-motor-em-triangulo.png)
+---
+## 🔥 Simulação de Sobrecarga no Motor
+
+Este esquema demonstra a condição de sobrecarga no sistema estrela-triângulo. Quando a corrente ultrapassa o valor nominal, o relé térmico atua, interrompendo o circuito de comando e protegendo o motor contra danos térmicos e elétricos.
+
+![Simulação de sobrecarga no arranque estrela-triângulo](../imagens/estrela-triangulo-sobrecarga-simulacao.png)
 ## Segurança
 ---
 Nunca permitir accionamento simultâneo dos contactores estrela e triângulo.
