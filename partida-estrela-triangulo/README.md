@@ -39,9 +39,9 @@ O sistema inicia o motor em ligação estrela para reduzir a corrente de arranqu
 
 ![Diagrama de comando estrela-triângulo](../imagens/diagrama-partida-estrela-triangulo.png)
 ---
-
+![Motor acionado em estrela após K1 e K3](../imagens/Diagrama-partida-estrela-triangulo-apos-acionamento-de-K1-e-K3-motor-acionado-em-estrela.png)
 ## Segurança
-
+---
 Nunca permitir accionamento simultâneo dos contactores estrela e triângulo.
 
 O circuito deve possuir interbloqueio.
