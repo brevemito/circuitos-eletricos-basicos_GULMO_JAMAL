@@ -18,6 +18,9 @@ Coleção de projectos práticos de comandos elétricos aplicados à indústria 
 
 ###  Arranque Sequencial
 👉 [Ver projeto](./arranque-sequencial)
+
+###  Partida-Estrela-Triangulo
+👉 [Ver projeto](./partida-estrela-triangulo)
 ---
 
 ##  Objetivo
