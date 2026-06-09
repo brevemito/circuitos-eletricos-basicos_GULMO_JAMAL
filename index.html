@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel Circuitos Elétricos</title>
+
+    <style>
+        .carousel-container{
+            position:relative;
+            max-width:900px;
+            margin:40px auto;
+            overflow:hidden;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,.15);
+        }
+
+        .carousel-slide{ display:none; }
+
+        .carousel-slide.active{ display:block; }
+
+        .carousel-slide img{
+            width:100%;
+            height:auto;
+        }
+
+        .caption{
+            padding:12px;
+            background:#f5f5f5;
+            text-align:center;
+        }
+
+        .prev, .next{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            background:rgba(0,0,0,.6);
+            color:#fff;
+            border:none;
+            padding:10px 14px;
+            cursor:pointer;
+            font-size:18px;
+        }
+
+        .prev{ left:10px; }
+        .next{ right:10px; }
+    </style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Carrossel Educativo</h2>
+
+<div class="carousel-container">
+
+    <div class="carousel-slide active">
+        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SISTEMASEMTENSAO.png?raw=true">
+        <div class="caption">Sistema desligado e sem alimentação elétrica.</div>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SISTEMASOBTENSAO_PRONTO_PARA_FUNCIONAR.png?raw=true">
+        <div class="caption">Sistema pronto para funcionar.</div>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SENTIDO_HORARIO.png?raw=true">
+        <div class="caption">Motor sentido horário.</div>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SENTIDO_ANTI_HORARIO.png?raw=true">
+        <div class="caption">Motor sentido anti-horário.</div>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SOBRECARGA.png?raw=true">
+        <div class="caption">Proteção contra sobrecarga.</div>
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
+</div>
+
+<script>
+const slides = document.querySelectorAll('.carousel-slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let current = 0;
+
+function showSlide(index){
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+next.onclick = () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+};
+
+prev.onclick = () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+};
+
+setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}, 5000);
+
+showSlide(current);
+</script>
+
+</body>
+</html>
