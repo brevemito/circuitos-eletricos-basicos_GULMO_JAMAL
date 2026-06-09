@@ -55,11 +55,11 @@ Implementar um sistema de comando para inversão do sentido de rotação de um m
 - Máquinas industriais
 
 ---
-## 📊 Visualização do Carrossel Educativo
+## 📊 Carrossel Educativo – Circuitos Elétricos
 
-👉 Aceda ao carrossel interativo aqui:
+👉 Clique na imagem para abrir o carrossel interativo:
 
-https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/
+[![Carrossel Circuitos Elétricos](https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SENTIDO_HORARIO.png?raw=true)](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/)
 ---
 ## 📬 Autor
 Gulamo Jamal | gulamo.jamal@outlook.com | gulamojamal@gmail.com | brevemito.com | info@brevemito.com
