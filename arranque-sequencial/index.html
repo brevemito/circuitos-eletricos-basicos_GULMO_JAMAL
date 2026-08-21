@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arranque Sequencial de 3 Motores Trifásicos | Circuitos Eléctricos Básicos</title>
+  <meta name="description" content="Comando eléctrico industrial para arranque sequencial manual de três motores trifásicos, sem relé temporizador.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Circuitos Eléctricos Básicos</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html#inicio">Início</a>
+        <a href="../index.html#projectos">Projectos</a>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">Brevemito</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+      <h1>Arranque Sequencial de 3 Motores Trifásicos</h1>
+      <p class="lead">Sistema de comando eléctrico industrial para arranque sequencial manual de três motores trifásicos (M1, M2 e M3), sem relé temporizador.</p>
+
+      <section id="descricao">
+        <h2>Descrição</h2>
+        <p>M2 depende de M1. M3 depende de M2. O sistema não utiliza relé temporizador.</p>
+      </section>
+
+      <section id="componentes">
+        <h2>Componentes</h2>
+        <ul class="spec-list">
+          <li>Motores: M1, M2, M3</li>
+          <li>Fusíveis: F1, F2, F3</li>
+          <li>Contactores: K1, K2, K3</li>
+          <li>Relés térmicos: RT1, RT2, RT3</li>
+          <li>Botoeiras NF: S0, S2, S4</li>
+          <li>Botoeiras NA: S1, S3, S5</li>
+        </ul>
+      </section>
+
+      <section id="diagrama">
+        <h2>Diagrama</h2>
+        <figure class="diagram-figure">
+          <img src="../imagens/arranque-sequencial.png" alt="Diagrama de força e comando do arranque sequencial de três motores trifásicos">
+          <figcaption>Arranque Sequencial: Força e Comando</figcaption>
+        </figure>
+      </section>
+
+      <section id="brevemito">
+        <div class="brevemito-callout">
+          <p>Este projecto tem um artigo próprio no Brevemito, com mais contexto sobre o arranque sequencial de motores.</p>
+          <a class="btn" href="https://brevemito.com/arranque-sequencial-de-motores-eletricos/" target="_blank" rel="noopener noreferrer">Saiba mais no Brevemito</a>
+        </div>
+      </section>
+
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Brevemito.com</strong></p>
+      <p><a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">https://brevemito.com</a></p>
+      <p>&copy; <span id="year"></span> Gulamo Jamal</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
