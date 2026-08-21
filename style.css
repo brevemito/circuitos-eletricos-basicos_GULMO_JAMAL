@@ -270,3 +270,87 @@ section h2 {
   .nav-toggle { display: flex; }
   .hero h1 { font-size: 1.7rem; }
 }
+
+/* Project page */
+.project-page { padding: 40px 0 64px; }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-page h1 { font-family: var(--font-heading); margin-bottom: 6px; }
+.project-page .lead { color: var(--color-text-muted); margin-top: 0; }
+
+.project-page section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.project-page section:last-of-type { border-bottom: none; }
+
+.project-page h2 {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.spec-list, .steps-list {
+  padding-left: 20px;
+}
+.spec-list li, .steps-list li { margin-bottom: 6px; }
+
+.diagram-figure {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 12px;
+  text-align: center;
+}
+
+.diagram-figure figcaption {
+  margin-top: 10px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.project-page .brevemito-callout { text-align: left; }
+.project-page .brevemito-callout p { margin-bottom: 12px; }
+
+/* Gallery carousel (usado na página Inversão de Marcha) */
+.carousel-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.carousel-slide { display: none; }
+.carousel-slide.active { display: block; }
+
+.carousel-caption {
+  padding: 12px;
+  background: var(--color-surface);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+}
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
