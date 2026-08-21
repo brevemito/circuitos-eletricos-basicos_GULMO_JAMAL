@@ -203,6 +203,20 @@ section h2 {
   text-align: center;
 }
 
+.brevemito-callout {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.brevemito-callout p {
+  color: var(--color-text-muted);
+  margin: 0 0 12px;
+}
+
 /* WhatsApp section */
 .whatsapp-section {
   background: var(--color-surface);
