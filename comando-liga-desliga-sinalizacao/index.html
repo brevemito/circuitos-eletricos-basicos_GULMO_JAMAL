@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comando Liga/Desliga com Sinalização | Circuitos Eléctricos Básicos</title>
+  <meta name="description" content="Circuito de comando liga/desliga com sinalização de estado: pronto, funcionamento e sobrecarga.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Circuitos Eléctricos Básicos</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html#inicio">Início</a>
+        <a href="../index.html#projectos">Projectos</a>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">Brevemito</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+      <h1>Comando Liga/Desliga com Sinalização</h1>
+      <p class="lead">Circuito de comando para ligar e desligar uma carga, com indicação visual de estado.</p>
+
+      <section id="objectivo">
+        <h2>Objectivo</h2>
+        <p>Implementar um circuito de comando para ligar e desligar uma carga, com indicação visual de estado: pronto, funcionamento e falha.</p>
+      </section>
+
+      <section id="componentes">
+        <h2>Componentes</h2>
+        <ul class="spec-list">
+          <li>S0 → Botão STOP (Normalmente Fechado)</li>
+          <li>S1 → Botão START (Normalmente Aberto)</li>
+          <li>K1 → Contactor</li>
+          <li>F2 → Relé térmico (protecção contra sobrecarga)</li>
+          <li>F → Fusíveis (protecção contra curto-circuito)</li>
+          <li>M → Motor trifásico</li>
+        </ul>
+        <h2>Sinalização</h2>
+        <ul class="spec-list">
+          <li>H1 → Motor em funcionamento</li>
+          <li>H2 → Sistema pronto para funcionamento</li>
+          <li>H3 → Sobrecarga (contacto NA 97-98 do relé térmico)</li>
+        </ul>
+      </section>
+
+      <section id="funcionamento">
+        <h2>Funcionamento</h2>
+        <ol class="steps-list">
+          <li>Quando o sistema é energizado, H2 acende indicando que está pronto para operação.</li>
+          <li>Ao pressionar START (S1), o contactor K1 é energizado.</li>
+          <li>A carga entra em funcionamento e H1 acende.</li>
+          <li>O contacto auxiliar de K1 mantém o circuito activo (auto-retenção).</li>
+          <li>Ao pressionar STOP (S0), o circuito abre e a carga desliga.</li>
+          <li>Em caso de sobrecarga, o relé térmico actua, desliga o circuito e H3 acende.</li>
+        </ol>
+      </section>
+
+      <section id="diagrama">
+        <h2>Diagrama</h2>
+        <figure class="diagram-figure">
+          <img src="diagrama-liga-desliga.png" alt="Diagrama do circuito de comando liga/desliga com sinalização">
+          <figcaption>Circuito de comando liga/desliga com sinalização de estado</figcaption>
+        </figure>
+      </section>
+
+      <section id="protecoes">
+        <h2>Protecções</h2>
+        <ul class="spec-list">
+          <li>Fusíveis para protecção contra curto-circuito</li>
+          <li>Relé térmico ajustado à corrente nominal da carga</li>
+          <li>Ligação à terra (quando aplicável)</li>
+        </ul>
+
+        <div class="brevemito-callout">
+          <p>Quer perceber os fundamentos por trás deste tipo de circuito? O artigo do Brevemito sobre circuitos eléctricos básicos explica os conceitos por detrás destes esquemas de comando.</p>
+          <a class="btn" href="https://brevemito.com/circuitos-electricos-basicos/" target="_blank" rel="noopener noreferrer">Saiba mais no Brevemito</a>
+        </div>
+      </section>
+
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Brevemito.com</strong></p>
+      <p><a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">https://brevemito.com</a></p>
+      <p>&copy; <span id="year"></span> Gulamo Jamal</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
