@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partida Estrela-Triângulo | Circuitos Eléctricos Básicos</title>
+  <meta name="description" content="Comando e potência para partida estrela-triângulo de motor trifásico, com transferência automática após temporização.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Circuitos Eléctricos Básicos</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html#inicio">Início</a>
+        <a href="../index.html#projectos">Projectos</a>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">Brevemito</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+      <h1>Partida Estrela-Triângulo</h1>
+      <p class="lead">Comando e potência para partida estrela-triângulo de motor trifásico. O motor arranca em estrela e, após temporização, transfere automaticamente para triângulo.</p>
+
+      <section id="funcionamento">
+        <h2>Funcionamento</h2>
+        <ol class="steps-list">
+          <li>Pressionar START</li>
+          <li>O contactor principal K1 energiza</li>
+          <li>O contactor estrela K3 energiza</li>
+          <li>O motor arranca em estrela</li>
+          <li>O temporizador inicia a contagem</li>
+          <li>Após aproximadamente 10 segundos: K3 desliga, K2 liga</li>
+          <li>O motor passa a operar em triângulo</li>
+        </ol>
+      </section>
+
+      <section id="componentes">
+        <h2>Componentes</h2>
+        <ul class="spec-list">
+          <li>K1 → Contactor principal</li>
+          <li>K2 → Contactor triângulo</li>
+          <li>K3 → Contactor estrela</li>
+          <li>RT → Relé térmico</li>
+          <li>T → Temporizador</li>
+          <li>S0 → Botão STOP</li>
+          <li>S1 → Botão START</li>
+        </ul>
+      </section>
+
+      <section id="diagrama">
+        <h2>Diagrama de Comando</h2>
+        <figure class="diagram-figure">
+          <img src="../imagens/diagrama-partida-estrela-triangulo.png" alt="Diagrama de comando da partida estrela-triângulo">
+          <figcaption>Diagrama de comando estrela-triângulo</figcaption>
+        </figure>
+      </section>
+
+      <section id="fase-estrela">
+        <h2>Partida em Estrela (K1 + K3 activados)</h2>
+        <p>Neste estágio inicial, o motor é alimentado em ligação estrela através do accionamento de K1 (principal) e K3 (estrela). Esta configuração reduz a tensão aplicada a cada enrolamento para aproximadamente 58% da tensão de linha, diminuindo a corrente de arranque e o esforço mecânico durante a partida.</p>
+        <figure class="diagram-figure">
+          <img src="../imagens/Diagrama-partida-estrela-triangulo-apos-acionamento-de-K1-e-K3-motor-acionado-em-estrela.png" alt="Motor accionado em estrela após K1 e K3">
+          <figcaption>Motor accionado em estrela após K1 e K3</figcaption>
+        </figure>
+      </section>
+
+      <section id="fase-triangulo">
+        <h2>Funcionamento do Arranque em Triângulo</h2>
+        <p>Após a temporização do sistema, K3 (estrela) é desligada e K2 é accionado em conjunto com K1. Nesta fase, o motor passa a operar em ligação triângulo, recebendo tensão total de linha e funcionando à sua potência nominal.</p>
+        <figure class="diagram-figure">
+          <img src="../imagens/Diagrama-partida-estrela-triangulo-apos-10-segundos-desliga-K3-e-aciona-contatora-K2-motor-em-triangulo.png" alt="Diagrama da partida estrela-triângulo em triângulo">
+          <figcaption>Motor em triângulo, após K3 desligar e K2 accionar</figcaption>
+        </figure>
+      </section>
+
+      <section id="sobrecarga">
+        <h2>Simulação de Sobrecarga no Motor</h2>
+        <p>Este esquema demonstra a condição de sobrecarga no sistema estrela-triângulo. Quando a corrente ultrapassa o valor nominal, o relé térmico actua, interrompendo o circuito de comando e protegendo o motor contra danos térmicos e eléctricos.</p>
+        <figure class="diagram-figure">
+          <img src="../imagens/estrela-triangulo-sobrecarga-simulacao.png" alt="Simulação de sobrecarga no arranque estrela-triângulo">
+          <figcaption>Simulação de sobrecarga no arranque estrela-triângulo</figcaption>
+        </figure>
+      </section>
+
+      <section id="seguranca">
+        <h2>Segurança</h2>
+        <p>Nunca permitir accionamento simultâneo dos contactores estrela e triângulo. O circuito deve possuir interbloqueio.</p>
+      </section>
+
+      <section id="aplicacoes">
+        <h2>Aplicações</h2>
+        <ul class="spec-list">
+          <li>Bombas industriais</li>
+          <li>Ventiladores</li>
+          <li>Compressores</li>
+          <li>Motores trifásicos</li>
+        </ul>
+
+        <div class="brevemito-callout">
+          <p>Este projecto tem um artigo próprio no Brevemito, dedicado ao arranque estrela-triângulo em motores trifásicos.</p>
+          <a class="btn" href="https://brevemito.com/arranque-estrela-triangulo-em-motores-trifasicos/" target="_blank" rel="noopener noreferrer">Saiba mais no Brevemito</a>
+        </div>
+      </section>
+
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Brevemito.com</strong></p>
+      <p><a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">https://brevemito.com</a></p>
+      <p>&copy; <span id="year"></span> Gulamo Jamal</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
