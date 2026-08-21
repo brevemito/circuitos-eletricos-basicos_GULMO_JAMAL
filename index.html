@@ -1,117 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel Circuitos Elétricos</title>
-
-    <style>
-        .carousel-container{
-            position:relative;
-            max-width:900px;
-            margin:40px auto;
-            overflow:hidden;
-            border-radius:10px;
-            box-shadow:0 2px 10px rgba(0,0,0,.15);
-        }
-
-        .carousel-slide{ display:none; }
-
-        .carousel-slide.active{ display:block; }
-
-        .carousel-slide img{
-            width:100%;
-            height:auto;
-        }
-
-        .caption{
-            padding:12px;
-            background:#f5f5f5;
-            text-align:center;
-        }
-
-        .prev, .next{
-            position:absolute;
-            top:50%;
-            transform:translateY(-50%);
-            background:rgba(0,0,0,.6);
-            color:#fff;
-            border:none;
-            padding:10px 14px;
-            cursor:pointer;
-            font-size:18px;
-        }
-
-        .prev{ left:10px; }
-        .next{ right:10px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circuitos Eléctricos Básicos: Comandos, Potência e Motores | Brevemito</title>
+  <meta name="description" content="Projectos práticos de circuitos eléctricos: arranque directo, inversão de marcha, arranque sequencial e partida estrela-triângulo para comando e potência de motores eléctricos.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Circuitos Eléctricos Básicos: Comandos, Potência e Motores">
+  <meta property="og:description" content="Colecção de projectos práticos de comandos eléctricos aplicados à indústria: arranque directo, inversão de marcha, arranque sequencial e partida estrela-triângulo.">
+  <meta property="og:url" content="https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/">
+  <meta property="og:image" content="arranque-direto-trifasico/arranque-direto-trifasico.png">
+  <meta property="og:locale" content="pt_MZ">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
-<h2 style="text-align:center;">Carrossel Educativo</h2>
-
-<div class="carousel-container">
-
-    <div class="carousel-slide active">
-        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SISTEMASEMTENSAO.png?raw=true">
-        <div class="caption">Sistema desligado e sem alimentação elétrica.</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Circuitos Eléctricos Básicos</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Início</a>
+        <a href="#projectos">Projectos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">Brevemito</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <div class="carousel-slide">
-        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SISTEMASOBTENSAO_PRONTO_PARA_FUNCIONAR.png?raw=true">
-        <div class="caption">Sistema pronto para funcionar.</div>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1>Circuitos Eléctricos Básicos</h1>
+        <p>Colecção de projectos práticos de comandos eléctricos e circuitos de potência aplicados à indústria: arranque directo, inversão de marcha, arranque sequencial e partida estrela-triângulo de motores.</p>
+      </div>
+    </section>
+
+    <section id="projectos">
+      <div class="container">
+        <h2>Projectos</h2>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <img src="arranque-direto-trifasico/arranque-direto-trifasico.png" alt="Diagrama do circuito de arranque directo de motor trifásico com sinalização">
+            <div class="project-card-body">
+              <h3>Arranque Directo de Motor Trifásico</h3>
+              <p>Comando de arranque directo com sinalização de estado (pronto, funcionamento, sobrecarga) e protecção contra curto-circuito.</p>
+              <a class="btn" href="arranque-direto-trifasico/">Ver projecto</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="arranque-direto-monofasico/arranque-direto-monofasico.png" alt="Diagrama do circuito de arranque directo de motor monofásico com sinalização">
+            <div class="project-card-body">
+              <h3>Arranque Directo de Motor Monofásico</h3>
+              <p>Sistema de comando para arranque directo de motor monofásico, com sinalização e protecção contra sobrecarga e curto-circuito.</p>
+              <a class="btn" href="arranque-direto-monofasico/">Ver projecto</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="inversao-de-marcha/Inversao_de_Marcha_de_Motor_Trifasico.png" alt="Diagrama do circuito de inversão de marcha de motor trifásico">
+            <div class="project-card-body">
+              <h3>Inversão de Marcha</h3>
+              <p>Comando para inversão do sentido de rotação de um motor trifásico, com intertravamento eléctrico e protecção.</p>
+              <a class="btn" href="inversao-de-marcha/">Ver projecto</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="imagens/arranque-sequencial.png" alt="Diagrama de força e comando do arranque sequencial de três motores trifásicos">
+            <div class="project-card-body">
+              <h3>Arranque Sequencial</h3>
+              <p>Arranque sequencial manual de três motores trifásicos (M1, M2 e M3), sem relé temporizador.</p>
+              <a class="btn" href="arranque-sequencial/">Ver projecto</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="imagens/diagrama-partida-estrela-triangulo.png" alt="Diagrama de comando da partida estrela-triângulo de motor trifásico">
+            <div class="project-card-body">
+              <h3>Partida Estrela-Triângulo</h3>
+              <p>Arranque em estrela seguido de transferência automática para triângulo, reduzindo a corrente de arranque do motor.</p>
+              <a class="btn" href="partida-estrela-triangulo/">Ver projecto</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="comando-liga-desliga-sinalizacao/diagrama-liga-desliga.png" alt="Diagrama do circuito de comando liga/desliga com sinalização">
+            <div class="project-card-body">
+              <h3>Comando Liga/Desliga com Sinalização</h3>
+              <p>Circuito de comando para ligar e desligar uma carga, com indicação visual de estado: pronto, funcionamento e falha.</p>
+              <a class="btn" href="comando-liga-desliga-sinalizacao/">Ver projecto</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about-block">
+        <h2>Sobre</h2>
+        <p>Este repositório reúne projectos práticos de comandos eléctricos e circuitos de potência, desenvolvidos por Gulamo Jamal para demonstrar conhecimento técnico através de exemplos reais e documentados. Faz parte do portefólio técnico publicado em <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">brevemito.com</a>.</p>
+      </div>
+    </section>
+
+    <section class="whatsapp-section">
+      <div class="container">
+        <h2>Receba novidades do Brevemito no WhatsApp</h2>
+        <p class="whatsapp-lead">Siga o canal para receber artigos, vagas de emprego e actualizações do Brevemito directamente no seu telemóvel.</p>
+        <a href="https://whatsapp.com/channel/0029VbD9lut2Jl88G0igIL0O" target="_blank" rel="noopener" aria-label="Seguir o canal Brevemito no WhatsApp">
+          <img
+            src="https://mistyrose-ostrich-482714.hostingersite.com/wp-content/uploads/2026/07/canal_brevemito.png"
+            alt="Siga o canal Brevemito no WhatsApp para receber artigos, vagas e actualizações"
+            style="width:100%; max-width:100%; height:auto; display:block; border:0;"
+          >
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Brevemito.com</strong></p>
+      <p><a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">https://brevemito.com</a></p>
+      <p>Circuitos Eléctricos Básicos: projectos de comandos e potência eléctrica</p>
+      <p>&copy; <span id="year"></span> Gulamo Jamal</p>
     </div>
+  </footer>
 
-    <div class="carousel-slide">
-        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SENTIDO_HORARIO.png?raw=true">
-        <div class="caption">Motor sentido horário.</div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SENTIDO_ANTI_HORARIO.png?raw=true">
-        <div class="caption">Motor sentido anti-horário.</div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/imagens/SOBRECARGA.png?raw=true">
-        <div class="caption">Proteção contra sobrecarga.</div>
-    </div>
-
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-
-</div>
-
-<script>
-const slides = document.querySelectorAll('.carousel-slide');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-let current = 0;
-
-function showSlide(index){
-    slides.forEach(s => s.classList.remove('active'));
-    slides[index].classList.add('active');
-}
-
-next.onclick = () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-};
-
-prev.onclick = () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-};
-
-setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-}, 5000);
-
-showSlide(current);
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
