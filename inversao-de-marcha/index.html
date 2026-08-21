@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inversão de Marcha de Motor Trifásico | Circuitos Eléctricos Básicos</title>
+  <meta name="description" content="Circuito de inversão do sentido de rotação de um motor trifásico, com intertravamento eléctrico e protecção.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Circuitos Eléctricos Básicos</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html#inicio">Início</a>
+        <a href="../index.html#projectos">Projectos</a>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">Brevemito</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+      <h1>Inversão de Marcha de Motor Trifásico</h1>
+      <p class="lead">Sistema de comando para inversão do sentido de rotação de um motor trifásico, com intertravamento eléctrico e protecção.</p>
+
+      <section id="objectivo">
+        <h2>Objectivo</h2>
+        <p>Implementar um sistema de comando para inversão do sentido de rotação de um motor trifásico, com intertravamento eléctrico e protecção.</p>
+      </section>
+
+      <section id="componentes">
+        <h2>Componentes</h2>
+        <ul class="spec-list">
+          <li>S0 → Botão STOP (Normalmente Fechado)</li>
+          <li>S1 → Botão START (sentido directo)</li>
+          <li>S2 → Botão START (sentido inverso)</li>
+          <li>K1 → Contactor (rotação directa)</li>
+          <li>K2 → Contactor (rotação inversa)</li>
+          <li>RT → Relé térmico (protecção contra sobrecarga)</li>
+          <li>F → Fusíveis (protecção contra curto-circuito)</li>
+          <li>M → Motor trifásico (U1, V1, W1 – fases / PE – aterramento)</li>
+        </ul>
+        <h2>Sinalização</h2>
+        <ul class="spec-list">
+          <li>H1 → Motor em rotação directa</li>
+          <li>H2 → Motor em rotação inversa</li>
+          <li>H3 → Sobrecarga (contacto NA 97-98 do relé térmico)</li>
+        </ul>
+      </section>
+
+      <section id="funcionamento">
+        <h2>Funcionamento</h2>
+        <ol class="steps-list">
+          <li>Ao energizar o sistema, o circuito fica pronto para operação.</li>
+          <li>Ao pressionar S1, o contactor K1 é energizado, alimentando o motor no sentido directo.</li>
+          <li>H1 acende indicando funcionamento directo.</li>
+          <li>Ao pressionar S2, o contactor K2 é energizado, invertendo duas fases do motor.</li>
+          <li>H2 acende indicando rotação inversa.</li>
+          <li>O intertravamento eléctrico impede que K1 e K2 funcionem simultaneamente.</li>
+          <li>Ao pressionar STOP (S0), o sistema desliga.</li>
+          <li>Em caso de sobrecarga, o relé térmico actua e H3 acende.</li>
+          <li>Para comutar de um sentido para outro, é preciso primeiro premir S0.</li>
+        </ol>
+      </section>
+
+      <section id="diagrama">
+        <h2>Diagrama</h2>
+        <figure class="diagram-figure">
+          <img src="Inversao_de_Marcha_de_Motor_Trifasico.png" alt="Diagrama do circuito de inversão de marcha de motor trifásico">
+          <figcaption>Circuito de comando e potência da inversão de marcha</figcaption>
+        </figure>
+      </section>
+
+      <section id="protecoes">
+        <h2>Protecções e segurança</h2>
+        <ul class="spec-list">
+          <li>Intertravamento eléctrico entre K1 e K2 (contactos NF cruzados)</li>
+          <li>Fusíveis para curto-circuito</li>
+          <li>Relé térmico ajustado à corrente do motor</li>
+          <li>Ligação à terra (PE)</li>
+        </ul>
+      </section>
+
+      <section id="aplicacoes">
+        <h2>Aplicações</h2>
+        <ul class="spec-list">
+          <li>Pontes rolantes</li>
+          <li>Elevadores</li>
+          <li>Sistemas de transporte</li>
+          <li>Máquinas industriais</li>
+        </ul>
+
+        <div class="brevemito-callout">
+          <p>Quer perceber os fundamentos por trás deste tipo de circuito? O artigo do Brevemito sobre circuitos eléctricos básicos explica os conceitos por detrás destes esquemas de comando.</p>
+          <a class="btn" href="https://brevemito.com/circuitos-electricos-basicos/" target="_blank" rel="noopener noreferrer">Saiba mais no Brevemito</a>
+        </div>
+      </section>
+
+      <section id="galeria">
+        <h2>Galeria Educativa de Sinalização</h2>
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <img src="../imagens/SISTEMASEMTENSAO.png" alt="Sistema desligado e sem alimentação eléctrica">
+            <div class="carousel-caption">Sistema desligado e sem alimentação eléctrica.</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../imagens/SISTEMASOBTENSAO_PRONTO_PARA_FUNCIONAR.png" alt="Sistema pronto para funcionar">
+            <div class="carousel-caption">Sistema pronto para funcionar.</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../imagens/SENTIDO_HORARIO.png" alt="Motor em sentido horário">
+            <div class="carousel-caption">Motor sentido horário.</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../imagens/SENTIDO_ANTI_HORARIO.png" alt="Motor em sentido anti-horário">
+            <div class="carousel-caption">Motor sentido anti-horário.</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../imagens/SOBRECARGA.png" alt="Sinalização de protecção contra sobrecarga">
+            <div class="carousel-caption">Protecção contra sobrecarga.</div>
+          </div>
+          <button class="carousel-prev" aria-label="Imagem anterior">&#10094;</button>
+          <button class="carousel-next" aria-label="Imagem seguinte">&#10095;</button>
+        </div>
+      </section>
+
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Brevemito.com</strong></p>
+      <p><a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">https://brevemito.com</a></p>
+      <p>&copy; <span id="year"></span> Gulamo Jamal</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
