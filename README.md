@@ -1,4 +1,4 @@
-👉 Este projecto faz parte do portfólio técnico publicado em: https://brevemito.com por Gulamo Jamal
+👉 Este projecto faz parte do portfólio técnico publicado em: https://brevemito.com/formacao-profissional/ por Gulamo Jamal
 
 # Circuitos Eléctricos Básicos
 
