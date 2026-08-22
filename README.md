@@ -1,32 +1,37 @@
-👉 Este projeto faz parte do portfólio técnico publicado em: https://brevemito.com por Gulamo Jamal
-# Circuitos Elétricos Básicos
+👉 Este projecto faz parte do portfólio técnico publicado em: https://brevemito.com por Gulamo Jamal
 
-Coleção de projectos práticos de comandos elétricos aplicados à indústria e instalações.
+# Circuitos Eléctricos Básicos
+
+Colecção de projectos práticos de comandos eléctricos aplicados à indústria e a instalações: arranque directo, inversão de marcha, arranque sequencial, partida estrela-triângulo e comando liga/desliga com sinalização.
 
 ---
 
 ## 📂 Projectos
 
-###  Arranque Direto de Motor Trifásico com SinalizaçãO
-👉 [Ver projeto](./arranque-direto-trifasico)
+### Arranque Directo de Motor Trifásico com Sinalização
+👉 [Ver projecto](./arranque-direto-trifasico)
 
-### ⚡ Arranque Direto de Motor Monofásico
-👉 [Ver projeto](./arranque-direto-monofasico)
+### ⚡ Arranque Directo de Motor Monofásico
+👉 [Ver projecto](./arranque-direto-monofasico)
 
 ### 🔄 Inversão de Marcha
-👉 [Ver projeto](./inversao-de-marcha)
+👉 [Ver projecto](./inversao-de-marcha)
 
-###  Arranque Sequencial
-👉 [Ver projeto](./arranque-sequencial)
+### Arranque Sequencial
+👉 [Ver projecto](./arranque-sequencial)
 
-###  Partida-Estrela-Triangulo
-👉 [Ver projeto](./partida-estrela-triangulo)
+### Partida Estrela-Triângulo
+👉 [Ver projecto](./partida-estrela-triangulo)
+
+### Comando Liga/Desliga com Sinalização
+👉 [Ver projecto](./comando-liga-desliga-sinalizacao)
+
 ---
 
-##  Objetivo
-Demonstrar conhecimento técnico através de exemplos reais e documentados.
+## 🛠️ Tecnologias utilizadas
 
----
+- HTML5 semântico
+- CSS3 (variáveis, Grid e Flexbox)
+- JavaScript puro (sem frameworks)
 
-## 📬 Autor
-Gulamo Jamal | Gulamo.jamal@outlook.com | [![Website](https://img.shields.io/badge/Website-brevemito.com-blue)](https://brevemito.com)
+## 📁 Estrutura do projecto
