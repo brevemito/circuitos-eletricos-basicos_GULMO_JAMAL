@@ -35,3 +35,39 @@ Colecção de projectos práticos de comandos eléctricos aplicados à indústri
 - JavaScript puro (sem frameworks)
 
 ## 📁 Estrutura do projecto
+
+.
+├── index.html                          (página inicial do site)
+├── style.css                           (estilos partilhados)
+├── script.js                           (menu mobile e carrossel)
+├── arranque-direto-trifasico/
+├── arranque-direto-monofasico/
+├── inversao-de-marcha/
+├── arranque-sequencial/
+├── partida-estrela-triangulo/
+├── comando-liga-desliga-sinalizacao/
+└── imagens/                            (diagramas partilhados)
+
+## 👀 Como visualizar
+
+Publicado através do GitHub Pages em:
+https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/
+
+Também pode abrir o `index.html` directamente no navegador depois de clonar o repositório.
+
+## 🎓 Formação Profissional
+
+Este repositório integra o guia de electricidade da secção de Formação Profissional do Brevemito:
+👉 https://brevemito.com/formacao-profissional/
+
+---
+
+## 🎯 Objectivo
+
+Demonstrar conhecimento técnico através de exemplos reais e documentados.
+
+---
+
+## 📬 Autor
+
+Gulamo Jamal | Gulamo.jamal@outlook.com | [![Website](https://img.shields.io/badge/Website-brevemito.com-blue)](https://brevemito.com)
