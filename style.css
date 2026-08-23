@@ -354,3 +354,16 @@ section h2 {
 }
 .carousel-prev { left: 10px; }
 .carousel-next { right: 10px; }
+
+/* Blocos de publicidade e parcerias */
+.ad-slot {
+  margin: 36px 0;
+}
+.ad-slot--banner {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
