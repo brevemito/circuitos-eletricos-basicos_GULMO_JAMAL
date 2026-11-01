@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arranque Sequencial Automático de 3 Motores | Circuitos Eléctricos Básicos</title>
+  <meta name="description" content="Arranque sequencial automático de três motores trifásicos com dois temporizadores: M1 por botoeira, M2 após 10 segundos e M3 após mais 10 segundos.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Circuitos Eléctricos Básicos</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html#inicio">Início</a>
+        <a href="../index.html#projectos">Projectos</a>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">Brevemito</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+      <h1>Arranque Sequencial Automático de 3 Motores</h1>
+      <p class="lead">Comando eléctrico para arranque sequencial automático de três motores trifásicos (M1, M2 e M3). Um único botão arranca M1; M2 entra após 10 segundos e M3 após mais 10 segundos, com dois temporizadores.</p>
+      <p>Na versão manual, cada motor é accionado pela sua própria botoeira. <a href="../arranque-sequencial/">Ver o arranque sequencial manual</a>.</p>
+
+      <section id="funcionamento">
+        <h2>Funcionamento</h2>
+        <ol class="steps-list">
+          <li>Pressionar o botão START (S1)</li>
+          <li>O contactor K1 energiza e fica retido pelo seu contacto auxiliar (13-14)</li>
+          <li>M1 arranca e o temporizador T1 inicia a contagem</li>
+          <li>Após 10 segundos, o contacto de T1 fecha e o contactor K2 energiza</li>
+          <li>M2 arranca e o temporizador T2 inicia a contagem</li>
+          <li>Após mais 10 segundos, o contacto de T2 fecha e o contactor K3 energiza</li>
+          <li>M3 arranca e os três motores ficam em funcionamento</li>
+          <li>Pressionar STOP (S0) desliga todo o sistema</li>
+        </ol>
+      </section>
+
+      <section id="componentes">
+        <h2>Componentes</h2>
+        <ul class="spec-list">
+          <li>M1, M2, M3 → Motores trifásicos</li>
+          <li>F1 → Fusíveis do circuito de força</li>
+          <li>F → Fusível do circuito de comando</li>
+          <li>K1, K2, K3 → Contactores</li>
+          <li>F2, F3, F4 → Relés térmicos de M1, M2 e M3</li>
+          <li>T1, T2 → Temporizadores com atraso à ligação (10 s)</li>
+          <li>S0 → Botoeira STOP (NF)</li>
+          <li>S1 → Botoeira START (NA)</li>
+        </ul>
+      </section>
+
+      <section id="video">
+        <h2>Vídeo da simulação</h2>
+        <p>O vídeo mostra o esquema a funcionar: M1 accionado pela botoeira, M2 a entrar após 10 segundos e M3 após mais 10 segundos, incluindo a simulação de uma sobrecarga.</p>
+        <figure class="diagram-figure">
+          <video controls preload="metadata" poster="01-motores-desligados.png" style="width:100%;max-width:100%;height:auto;">
+            <source src="https://brevemito.com/wp-content/uploads/2026/11/Arranque-sequencial-de-3-motores.mp4" type="video/mp4">
+            O seu navegador não suporta vídeo HTML5. <a href="https://brevemito.com/wp-content/uploads/2026/11/Arranque-sequencial-de-3-motores.mp4">Descarregar o vídeo</a>.
+          </video>
+          <figcaption>Simulação do arranque sequencial automático de 3 motores</figcaption>
+        </figure>
+      </section>
+
+      <section id="estado-inicial">
+        <h2>Estado inicial: motores desligados</h2>
+        <p>Com o sistema em repouso, todos os contactores estão desenergizados e os três motores parados.</p>
+        <figure class="diagram-figure">
+          <img src="01-motores-desligados.png" alt="Esquema do arranque sequencial automático com os três motores desligados">
+          <figcaption>Esquema com os três motores desligados</figcaption>
+        </figure>
+      </section>
+
+      <section id="motor-1">
+        <h2>Motor 1 ligado (K1 e T1)</h2>
+        <p>Ao pressionar S1, o contactor K1 energiza e fica retido. M1 arranca e o temporizador T1 começa a contar os 10 segundos.</p>
+        <figure class="diagram-figure">
+          <img src="02-motor-1-ligado.png" alt="Esquema do arranque sequencial automático com o motor 1 ligado">
+          <figcaption>Motor 1 ligado, T1 em contagem</figcaption>
+        </figure>
+      </section>
+
+      <section id="motor-2">
+        <h2>Motores 1 e 2 ligados (K2 e T2)</h2>
+        <p>Passados 10 segundos, o contacto de T1 fecha e energiza K2. M2 arranca em conjunto com M1 e o temporizador T2 começa a contar.</p>
+        <figure class="diagram-figure">
+          <img src="03-motores-1-e-2-ligados.png" alt="Esquema do arranque sequencial automático com os motores 1 e 2 ligados">
+          <figcaption>Motores 1 e 2 ligados, T2 em contagem</figcaption>
+        </figure>
+      </section>
+
+      <section id="motor-3">
+        <h2>Três motores ligados (K3)</h2>
+        <p>Após mais 10 segundos, o contacto de T2 fecha e energiza K3. M3 arranca e os três motores passam a funcionar em simultâneo.</p>
+        <figure class="diagram-figure">
+          <img src="04-tres-motores-ligados.png" alt="Esquema do arranque sequencial automático com os três motores ligados">
+          <figcaption>Os três motores em funcionamento</figcaption>
+        </figure>
+      </section>
+
+      <section id="sobrecarga">
+        <h2>Simulação de Sobrecarga</h2>
+        <p>O vídeo inclui a simulação de uma sobrecarga. Quando a corrente de um motor ultrapassa o valor nominal, o respectivo relé térmico actua e abre o seu contacto no circuito de comando, protegendo o motor contra danos térmicos e eléctricos.</p>
+        <p>O contacto do relé F2 está em série com todo o circuito de comando, pelo que uma sobrecarga em M1 desliga todo o sistema. Os contactos de F3 e F4 estão nos ramos de K2 e K3, respectivamente.</p>
+      </section>
+
+      <section id="aplicacoes">
+        <h2>Aplicações</h2>
+        <ul class="spec-list">
+          <li>Linhas de transporte e tapetes rolantes em cascata</li>
+          <li>Sistemas de ventilação e exaustão</li>
+          <li>Bombas e equipamentos que não devem arrancar em simultâneo</li>
+          <li>Redução do pico de corrente na rede durante o arranque</li>
+        </ul>
+        <p>Simulação realizada em CADe SIMU.</p>
+      </section>
+
+      <a class="back-link" href="../index.html#projectos">&larr; Voltar aos projectos</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Brevemito.com</strong></p>
+      <p><a href="https://brevemito.com" target="_blank" rel="noopener noreferrer">https://brevemito.com</a></p>
+      <p>&copy; <span id="year"></span> Gulamo Jamal</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
