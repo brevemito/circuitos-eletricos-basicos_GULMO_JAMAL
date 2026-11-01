@@ -392,3 +392,172 @@ section h2 {
   overflow: hidden;
   box-shadow: var(--shadow);
 }
+
+/* ===== Banner de afiliado Chess.com Premium (injectado pelo script.js) ===== */
+.bm-chess-ad {
+  --chess-verde: #81b64c;
+  --chess-verde-escuro: #5d8a34;
+  --chess-verde-claro: #a3d160;
+  --chess-preto: #1e1e1e;
+  --bm-vermelho: #c8000a;
+  --bm-ocre: #c8892b;
+  --bm-terracota: #b4552f;
+  --bm-verde-azulado: #2f7d6e;
+  position: relative;
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2.25rem 2.25rem 2rem;
+  background: var(--chess-preto);
+  border-radius: 14px;
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.bm-chess-ad::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bm-vermelho) 0%, var(--bm-ocre) 33%, var(--bm-terracota) 66%, var(--bm-verde-azulado) 100%);
+}
+.bm-chess-ad::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(129,182,76,0.06) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(129,182,76,0.06) 25%, transparent 25%);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.bm-chess-ad-tag {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  z-index: 2;
+}
+.bm-chess-ad-brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.4rem;
+}
+.bm-chess-ad-logo {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--chess-verde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bm-chess-ad-logo svg { width: 24px; height: 24px; }
+.bm-chess-ad-wordmark {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+.bm-chess-ad-wordmark span { color: var(--chess-verde); }
+.bm-chess-ad-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.bm-chess-ad-content { flex: 1 1 320px; min-width: 0; }
+.bm-chess-ad-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #ffffff;
+}
+.bm-chess-ad-title .bm-chess-highlight { color: var(--chess-verde-claro); }
+.bm-chess-ad-text {
+  margin: 0 0 1.25rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  max-width: 46ch;
+}
+.bm-chess-ad-benefits {
+  list-style: none;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+}
+.bm-chess-ad-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+}
+.bm-chess-ad-benefits svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: var(--chess-verde);
+}
+.bm-chess-ad-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--chess-preto);
+  background: var(--chess-verde);
+  padding: 0.85rem 1.7rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 0 var(--chess-verde-escuro);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.bm-chess-ad-button:hover,
+.bm-chess-ad-button:focus {
+  background: var(--chess-verde-claro);
+  color: var(--chess-preto);
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--chess-verde-escuro);
+}
+.bm-chess-ad-button svg { width: 18px; height: 18px; }
+.bm-chess-ad-badge {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--chess-verde-claro), var(--chess-verde) 60%, var(--chess-verde-escuro) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(129,182,76,0.35);
+}
+.bm-chess-ad-badge svg { width: 76px; height: 76px; }
+@media (max-width: 620px) {
+  .bm-chess-ad { padding: 2rem 1.4rem 1.75rem; }
+  .bm-chess-ad-body { flex-direction: column-reverse; text-align: center; }
+  .bm-chess-ad-benefits li { justify-content: center; }
+  .bm-chess-ad-title { font-size: 1.4rem; }
+  .bm-chess-ad-badge { width: 96px; height: 96px; }
+  .bm-chess-ad-badge svg { width: 52px; height: 52px; }
+  .bm-chess-ad-button { width: 100%; justify-content: center; }
+}
