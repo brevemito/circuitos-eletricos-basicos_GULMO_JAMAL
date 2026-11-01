@@ -20,6 +20,9 @@ Colecção de projectos práticos de comandos eléctricos aplicados à indústri
 ### Arranque Sequencial
 👉 [Ver projecto](./arranque-sequencial)
 
+### Arranque Sequencial Automático
+👉 [Ver projecto](./arranque-sequencial-automatico)
+
 ### Partida Estrela-Triângulo
 👉 [Ver projecto](./partida-estrela-triangulo)
 
@@ -44,6 +47,7 @@ Colecção de projectos práticos de comandos eléctricos aplicados à indústri
 ├── arranque-direto-monofasico/
 ├── inversao-de-marcha/
 ├── arranque-sequencial/
+├── arranque-sequencial-automatico/
 ├── partida-estrela-triangulo/
 ├── comando-liga-desliga-sinalizacao/
 └── imagens/                            (diagramas partilhados)
