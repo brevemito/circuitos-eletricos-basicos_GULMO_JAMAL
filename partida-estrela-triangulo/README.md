@@ -56,6 +56,36 @@ Após a temporização do sistema, K3 (estrela) é desligada e K2 é acionado em
 Este esquema demonstra a condição de sobrecarga no sistema estrela-triângulo. Quando a corrente ultrapassa o valor nominal, o relé térmico atua, interrompendo o circuito de comando e protegendo o motor contra danos térmicos e elétricos.
 
 ![Simulação de sobrecarga no arranque estrela-triângulo](../imagens/estrela-triangulo-sobrecarga-simulacao.png)
+## Esquema Completo com Sinalização
+
+Nesta versão, o circuito de força e o de comando aparecem lado a lado, com fusível de comando, relé térmico e intertravamento entre K2 e K3. Cinco lâmpadas mostram o estado do sistema: H0 (comando alimentado), H1 (K1 ligado), H3 (estrela), H2 (triângulo) e HF (falha por sobrecarga).
+
+| Componente | Função |
+|---|---|
+| F0 | Fusíveis do circuito de força |
+| F2 | Fusível do circuito de comando |
+| F1 | Relé térmico |
+| K1, K2, K3 | Contactores principal, triângulo e estrela |
+| T | Temporizador com contacto comutador |
+| S0 | Botoeira STOP (NF) |
+| S1 | Botoeira START (NA) |
+| H0, H1, H2, H3, HF | Lâmpadas de sinalização |
+
+Vídeo da simulação: [Ver o vídeo](https://brevemito.com/wp-content/uploads/2026/11/ESTRELA_TRIANGULO.mp4)
+
+### Desligado, pronto a funcionar
+![Desligado, pronto a funcionar](./01-desligado-pronto.png)
+
+### Posição estrela (K1 e K3 ligados)
+![Posição estrela](./02-posicao-estrela.png)
+
+### Posição triângulo (K1 e K2 ligados)
+![Posição triângulo](./03-posicao-triangulo.png)
+
+### Simulação de sobrecarga
+![Simulação de sobrecarga](./04-simulacao-sobrecarga.png)
+
+---
 ## Segurança
 ---
 Nunca permitir accionamento simultâneo dos contactores estrela e triângulo.
