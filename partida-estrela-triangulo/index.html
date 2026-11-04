@@ -89,6 +89,62 @@
           <figcaption>Simulação de sobrecarga no arranque estrela-triângulo</figcaption>
         </figure>
       </section>
+            <section id="esquema-completo">
+        <h2>Esquema Completo com Sinalização</h2>
+        <p>Nesta versão, o circuito de força e o de comando aparecem lado a lado, com fusível de comando, relé térmico e intertravamento entre K2 e K3. Cinco lâmpadas mostram o estado do sistema: H0 (comando alimentado), H1 (K1 ligado), H3 (estrela), H2 (triângulo) e HF (falha por sobrecarga).</p>
+        <p>O contacto comutador do temporizador (55, 56 e 58) alimenta o ramo de K3 enquanto conta e o ramo de K2 depois. O contacto NF de K2 no ramo de K3 e o NF de K3 no ramo de K2 impedem que os dois liguem ao mesmo tempo.</p>
+
+        <ul class="spec-list">
+          <li>F0 → Fusíveis do circuito de força</li>
+          <li>F2 → Fusível do circuito de comando</li>
+          <li>F1 → Relé térmico</li>
+          <li>K1, K2, K3 → Contactores principal, triângulo e estrela</li>
+          <li>T → Temporizador com contacto comutador</li>
+          <li>S0 → Botoeira STOP (NF)</li>
+          <li>S1 → Botoeira START (NA)</li>
+          <li>H0, H1, H2, H3, HF → Lâmpadas de sinalização</li>
+        </ul>
+      </section>
+
+      <section id="video-esquema-completo">
+        <h2>Vídeo da Simulação</h2>
+        <p>O vídeo mostra o esquema completo a funcionar.</p>
+        <figure class="diagram-figure">
+          <video controls preload="metadata" poster="01-desligado-pronto.png" style="width:100%;max-width:100%;height:auto;">
+            <source src="https://brevemito.com/wp-content/uploads/2026/11/ESTRELA_TRIANGULO.mp4" type="video/mp4">
+            O seu navegador não suporta vídeo HTML5. <a href="https://brevemito.com/wp-content/uploads/2026/11/ESTRELA_TRIANGULO.mp4">Descarregar o vídeo</a>.
+          </video>
+          <figcaption>Simulação da partida estrela-triângulo</figcaption>
+        </figure>
+      </section>
+
+      <section id="estados-esquema-completo">
+        <h2>Estados do Esquema Completo</h2>
+
+        <p>Com o sistema em repouso, só a lâmpada H0 está acesa: o comando está alimentado e à espera de START.</p>
+        <figure class="diagram-figure">
+          <img src="01-desligado-pronto.png" alt="Esquema estrela-triângulo desligado e pronto a funcionar, com H0 acesa">
+          <figcaption>Desligado, pronto a funcionar</figcaption>
+        </figure>
+
+        <p>Ao premir S1, K1 e K3 ligam. O motor arranca em estrela, o temporizador começa a contar e acendem H1 e H3.</p>
+        <figure class="diagram-figure">
+          <img src="02-posicao-estrela.png" alt="Esquema estrela-triângulo com o motor em estrela, K1 e K3 ligados">
+          <figcaption>Posição estrela: K1 e K3 ligados</figcaption>
+        </figure>
+
+        <p>Terminada a contagem, o temporizador desliga K3 e liga K2. H3 apaga, H2 acende e o motor passa a triângulo, com K1 e K2 ligados.</p>
+        <figure class="diagram-figure">
+          <img src="03-posicao-triangulo.png" alt="Esquema estrela-triângulo com o motor em triângulo, K1 e K2 ligados">
+          <figcaption>Posição triângulo: K1 e K2 ligados</figcaption>
+        </figure>
+
+        <p>Quando o relé térmico F1 actua, o seu contacto 95-96 abre e desliga todo o comando, e o 97-98 fecha e acende a lâmpada HF.</p>
+        <figure class="diagram-figure">
+          <img src="04-simulacao-sobrecarga.png" alt="Esquema estrela-triângulo com o relé térmico actuado e a lâmpada HF acesa">
+          <figcaption>Simulação de sobrecarga: F1 actuado e HF acesa</figcaption>
+        </figure>
+      </section>
 
       <section id="seguranca">
         <h2>Segurança</h2>
