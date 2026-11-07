@@ -37,12 +37,17 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 | 5 | **Arranque sequencial automático** | Sequência de arranque automática | [Abrir](./arranque-sequencial-automatico) |
 | 6 | **Partida estrela-triângulo** | Redução da corrente de arranque | [Abrir](./partida-estrela-triangulo) |
 | 7 | **Comando liga/desliga com sinalização** | Indicação do estado do circuito | [Abrir](./comando-liga-desliga-sinalizacao) |
-
-
 ---
-### 🎮 Teste os Seus Conhecimentos
+## 🎮 Teste os Seus Conhecimentos
 
-👉 [Jogar agora](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)
+> **Será que domina os comandos eléctricos?** Jogue, ganhe pontos e suba de nível, de *Aprendiz* a *Engenheiro de automação*.
+
+[![JOGAR AGORA](https://img.shields.io/badge/JOGAR_AGORA-c8000a?style=for-the-badge)](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)
+
+| Jogo | O que testa | Como é |
+|---|---|---|
+| 🕹️ **[Desafio do Quadro de Comando](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)** | Selo, intertravamento, estrela-triângulo, sensores, inversores e soft starter | 14 perguntas · 3 vidas · cerca de 3 min · grátis |
+| 🔜 *Em breve* | Novos desafios | |
 ---
 
 ## 👀 Como visualizar
