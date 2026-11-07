@@ -1,0 +1,20 @@
+.quiz-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; margin-top: 20px; max-width: 720px; }
+.quiz-hud { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-weight: 700; margin-bottom: 10px; }
+.quiz-hud span { background: var(--color-surface-alt); border-radius: 99px; padding: 4px 12px; font-size: 0.9rem; }
+.quiz-bar { height: 8px; background: var(--color-border); border-radius: 9px; overflow: hidden; margin-bottom: 16px; }
+.quiz-bar i { display: block; height: 100%; width: 0; background: var(--color-primary); transition: width .3s; }
+.quiz-tag { color: var(--color-accent-teal); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .06em; }
+.quiz-card h2 { margin: 6px 0 16px; font-size: 1.15rem; line-height: 1.4; border: 0; padding: 0; }
+.quiz-opt { display: block; width: 100%; text-align: left; font: inherit; color: var(--color-text); background: var(--color-bg); border: 2px solid var(--color-border); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; cursor: pointer; }
+.quiz-opt:hover:not(:disabled) { border-color: var(--color-primary); }
+.quiz-opt.ok { border-color: var(--color-accent-teal); background: #e3f3ef; }
+.quiz-opt.ko { border-color: var(--color-primary); background: #fbe4e4; }
+.quiz-opt.used { opacity: .5; }
+.quiz-tf { display: flex; gap: 10px; }
+.quiz-tf .quiz-opt { text-align: center; font-weight: 700; margin: 0; }
+.quiz-slots { min-height: 46px; border: 2px dashed var(--color-border); border-radius: 8px; padding: 8px; margin-bottom: 12px; }
+.quiz-slots div { background: #e3f3ef; border: 1px solid var(--color-accent-teal); border-radius: 6px; padding: 6px 10px; margin: 4px 0; font-size: 0.95rem; }
+.quiz-fb { margin: 6px 0 14px; padding: 12px 14px; border-left: 5px solid var(--color-accent-teal); background: #e3f3ef; border-radius: 6px; }
+.quiz-fb.bad { border-left-color: var(--color-primary); background: #fbe4e4; }
+.quiz-big { font-size: 3rem; font-weight: 800; color: var(--color-accent-ochre); margin: 4px 0; }
+.quiz-card button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 700; }
