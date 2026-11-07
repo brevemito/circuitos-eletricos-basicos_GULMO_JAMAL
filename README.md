@@ -37,10 +37,12 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 | 5 | **Arranque sequencial automático** | Sequência de arranque automática | [Abrir](./arranque-sequencial-automatico) |
 | 6 | **Partida estrela-triângulo** | Redução da corrente de arranque | [Abrir](./partida-estrela-triangulo) |
 | 7 | **Comando liga/desliga com sinalização** | Indicação do estado do circuito | [Abrir](./comando-liga-desliga-sinalizacao) |
+
+
+---
 ### 🎮 Teste os Seus Conhecimentos
 
-👉 [Jogar](https://github.com/brevemito/circuitos-eletricos-basicos_GULMO_JAMAL/blob/main/teste-os-conhecimentos)
-
+👉 [Jogar agora](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)
 ---
 
 ## 👀 Como visualizar
