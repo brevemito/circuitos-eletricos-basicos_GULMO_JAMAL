@@ -561,3 +561,21 @@ section h2 {
   .bm-chess-ad-badge svg { width: 52px; height: 52px; }
   .bm-chess-ad-button { width: 100%; justify-content: center; }
 }
+/* Faixa do jogo */
+.quiz-banner { background: var(--color-surface-alt); border-top: 6px solid var(--color-primary); border-bottom: 1px solid var(--color-border); padding: 36px 0; }
+.quiz-banner-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+.quiz-badge { display: inline-block; background: var(--color-primary); color: #fff; font-weight: 700; font-size: 0.8rem; padding: 4px 12px; border-radius: 99px; }
+.quiz-banner h2 { margin: 10px 0 6px; font-size: 1.8rem; }
+.quiz-banner p { color: var(--color-text-muted); margin: 0 0 14px; }
+.quiz-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 18px; }
+.quiz-chips li { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 99px; padding: 4px 12px; font-size: 0.85rem; font-weight: 600; }
+.btn-quiz { font-size: 1.05rem; padding: 14px 28px; box-shadow: 0 4px 0 var(--color-primary-dark); animation: quizPulse 2.4s ease-in-out infinite; }
+.btn-quiz:hover { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-primary-dark); }
+.quiz-banner-card { background: var(--color-surface); border: 2px solid var(--color-accent-ochre); border-radius: 14px; box-shadow: var(--shadow); padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; transform: rotate(2deg); }
+.qb-label { font-weight: 800; color: var(--color-accent-teal); }
+.qb-emoji { font-size: 3.4rem; line-height: 1; }
+.qb-rank { font-size: 0.9rem; color: var(--color-text-muted); }
+.qb-hearts { color: var(--color-primary); letter-spacing: 4px; }
+@keyframes quizPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@media (max-width: 760px) { .quiz-banner-inner { grid-template-columns: 1fr; } .quiz-banner-card { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .btn-quiz { animation: none; } }
