@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inversor de Frequência (VFD) | Circuitos Eléctricos Básicos</title>
+<meta name="description" content="Como funciona um inversor de frequência: rectificador, barramento CC, inversor com IGBT, PWM, controlo V/f, ligação, parametrização e selecção.">
+<style>
+:root{
+  --azul:#0b3a6e; --azul2:#1673b8; --verde:#0f9d7a; --fundo:#f4f7fb;
+  --texto:#1c2733; --cinza:#5b6b7b; --borda:#dbe3ec; --aviso:#b45309; --avisofundo:#fff4e0;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Roboto,Arial,sans-serif;color:var(--texto);background:var(--fundo);line-height:1.7}
+header{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;padding:40px 20px}
+header .w,main,footer .w{max-width:920px;margin:0 auto}
+header a{color:#cfe6ff;text-decoration:none;font-size:.95rem}
+header h1{margin:14px 0 8px;font-size:2rem;line-height:1.25}
+header p{margin:0;color:#e3f0ff;max-width:720px}
+main{padding:28px 20px 60px}
+section{background:#fff;border:1px solid var(--borda);border-radius:12px;padding:24px;margin-bottom:22px}
+h2{color:var(--azul);margin-top:0;font-size:1.4rem}
+h3{color:var(--azul2);margin-bottom:6px}
+p{margin:0 0 12px}
+ul,ol{padding-left:22px;margin:0 0 12px}
+li{margin-bottom:6px}
+.fig{margin:16px 0;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig figcaption{font-size:.88rem;color:var(--cinza);margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:14px 0}
+.card{background:var(--fundo);border:1px solid var(--borda);border-radius:10px;padding:14px}
+.card b{color:var(--azul)}
+.aviso{background:var(--avisofundo);border-left:5px solid var(--aviso);padding:12px 16px;border-radius:6px;margin:14px 0}
+.aviso b{color:var(--aviso)}
+.formula{background:#eef5ff;border:1px solid #cfe0f7;border-radius:8px;padding:12px;text-align:center;font-size:1.1rem;margin:12px 0}
+.tabela{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid var(--borda);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--azul);color:#fff}
+tr:nth-child(even) td{background:#f8fafd}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:12px 0}
+.calc label{font-size:.9rem;color:var(--cinza);display:block}
+.calc input{width:100%;padding:8px;border:1px solid var(--borda);border-radius:6px;font-size:1rem}
+.res{background:var(--azul);color:#fff;border-radius:8px;padding:14px;font-size:1.05rem}
+code{background:#eef2f7;padding:1px 6px;border-radius:4px}
+footer{background:var(--azul);color:#cfe0f5;padding:22px 20px;font-size:.92rem}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="w">
+    <a href="../index.html">← Voltar aos projectos</a>
+    <h1>Inversor de Frequência (VFD): controlo de velocidade de motores trifásicos</h1>
+    <p>Como um inversor transforma a rede de tensão e frequência fixas numa saída de tensão e frequência variáveis, e como o ligar, parametrizar e escolher.</p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>1. O que é um inversor de frequência</h2>
+  <p>Um inversor de frequência, também chamado <b>VFD</b> (<i>Variable Frequency Drive</i>) ou variador de velocidade, é um conversor electrónico que alimenta um motor de indução com <b>tensão e frequência variáveis</b>. Como a velocidade de um motor de indução depende da frequência, variando a frequência varia-se a velocidade.</p>
+  <p>Além da velocidade, o inversor permite controlar o <b>tempo de aceleração e desaceleração</b>, o <b>sentido de rotação</b>, o <b>binário</b> e proteger o motor contra sobrecarga, tudo por programação e sem peças mecânicas de variação.</p>
+</section>
+
+<section>
+  <h2>2. Porque controlar a velocidade</h2>
+  <div class="cards">
+    <div class="card"><b>Adequação ao processo</b><br>Bombas, ventiladores, esteiras e compressores raramente precisam de 100% da velocidade o tempo todo. O inversor ajusta a rotação à necessidade de cada momento.</div>
+    <div class="card"><b>Poupança de energia</b><br>Em bombas e ventiladores a potência varia com o cubo da velocidade. Reduzir a rotação em 20% pode reduzir a potência consumida em cerca de metade (0,8 × 0,8 × 0,8 ≈ 0,51).</div>
+    <div class="card"><b>Protecção mecânica</b><br>Arranques e paragens em rampa eliminam choques em correias, engrenagens e acoplamentos, e evitam o golpe de aríete em tubagens.</div>
+  </div>
+</section>
+
+<section>
+  <h2>3. Métodos clássicos e as suas limitações</h2>
+  <div class="tabela">
+  <table>
+    <tr><th>Método</th><th>Como funciona</th><th>Limitação</th></tr>
+    <tr><td>Arranque directo (DOL)</td><td>Motor ligado directamente à rede, de 0 a 100% de uma vez.</td><td>Corrente de arranque de 6 a 8 vezes a nominal, quedas de tensão na rede e choque mecânico.</td></tr>
+    <tr><td>Estrela-triângulo</td><td>Arranque em dois estágios, com tensão reduzida na partida.</td><td>Reduz a corrente de arranque, mas a velocidade continua fixa.</td></tr>
+    <tr><td>Controlo mecânico</td><td>Válvulas de estrangulamento, <i>dampers</i> e caixas de redução.</td><td>O motor continua a trabalhar a plena velocidade contra uma restrição. Desperdício de energia, como conduzir com o acelerador e o travão ao mesmo tempo.</td></tr>
+    <tr><td>Inversor de frequência</td><td>Altera a frequência e a tensão aplicadas ao motor.</td><td>Custo inicial mais elevado e necessidade de parametrização correcta.</td></tr>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>4. Como funciona: as três etapas de potência</h2>
+  <p>O inversor faz uma conversão <b>CA → CC → CA</b>, controlada por um microprocessador.</p>
+
+  <figure class="fig">
+  <svg viewBox="0 0 780 190" role="img" aria-label="Diagrama de blocos de um inversor de frequência">
+    <defs><marker id="seta" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0b3a6e"/></marker></defs>
+    <rect x="10" y="50" width="120" height="70" rx="10" fill="#e8f1fb" stroke="#1673b8"/>
+    <text x="70" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#0b3a6e">Rede</text>
+    <text x="70" y="102" text-anchor="middle" font-size="12" fill="#1c2733">3~ 50 Hz</text>
+
+    <rect x="175" y="50" width="120" height="70" rx="10" fill="#fde9e9" stroke="#c0392b"/>
+    <text x="235" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#7b241c">Rectificador</text>
+    <text x="235" y="102" text-anchor="middle" font-size="12" fill="#1c2733">6 díodos</text>
+
+    <rect x="340" y="50" width="120" height="70" rx="10" fill="#eef1f4" stroke="#5b6b7b"/>
+    <text x="400" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#2c3e50">Barramento CC</text>
+    <text x="400" y="102" text-anchor="middle" font-size="12" fill="#1c2733">condensador</text>
+
+    <rect x="505" y="50" width="120" height="70" rx="10" fill="#fff1d6" stroke="#d68910"/>
+    <text x="565" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#7e5109">Inversor</text>
+    <text x="565" y="102" text-anchor="middle" font-size="12" fill="#1c2733">6 IGBT + PWM</text>
+
+    <circle cx="715" cy="85" r="38" fill="#e3f6ef" stroke="#0f9d7a"/>
+    <text x="715" y="82" text-anchor="middle" font-size="16" font-weight="700" fill="#0b6e55">M</text>
+    <text x="715" y="102" text-anchor="middle" font-size="12" fill="#1c2733">3~ 0 a XX Hz</text>
+
+    <line x1="130" y1="85" x2="173" y2="85" stroke="#0b3a6e" stroke-width="2" marker-end="url(#seta)"/>
+    <line x1="295" y1="85" x2="338" y2="85" stroke="#0b3a6e" stroke-width="2" marker-end="url(#seta)"/>
+    <line x1="460" y1="85" x2="503" y2="85" stroke="#0b3a6e" stroke-width="2" marker-end="url(#seta)"/>
+    <line x1="625" y1="85" x2="675" y2="85" stroke="#0b3a6e" stroke-width="2" marker-end="url(#seta)"/>
+
+    <rect x="175" y="150" width="450" height="30" rx="8" fill="#0b3a6e"/>
+    <text x="400" y="170" text-anchor="middle" font-size="13" fill="#fff">Unidade de controlo microprocessada (CPU + IHM + entradas e saídas)</text>
+    <line x1="235" y1="120" x2="235" y2="150" stroke="#0b3a6e" stroke-dasharray="4 3"/>
+    <line x1="565" y1="120" x2="565" y2="150" stroke="#0b3a6e" stroke-dasharray="4 3"/>
+  </svg>
+  <figcaption>Esquema de blocos ilustrativo de um inversor de frequência.</figcaption>
+  </figure>
+
+  <h3>4.1 Rectificador</h3>
+  <p>Ponte de seis díodos que converte a tensão alternada trifásica da rede em tensão contínua pulsante. Os díodos só deixam passar a corrente num sentido.</p>
+  <h3>4.2 Barramento CC (filtro)</h3>
+  <p>Condensadores (e, em alguns modelos, indutâncias) alisam a tensão rectificada e armazenam energia, deixando-a quase contínua. Por isso, em redes de 380 V, a tensão no barramento ronda os 540 V.</p>
+  <h3>4.3 Inversor</h3>
+  <p>Seis transístores <b>IGBT</b> (transistor bipolar de porta isolada) funcionam como interruptores rápidos. Ligados e desligados numa sequência calculada pela CPU, geram três tensões desfasadas de 120° a partir da tensão contínua. Em alguns equipamentos podem usar-se outros semicondutores, mas o IGBT é o mais comum.</p>
+
+  <h3>4.4 Modulação PWM</h3>
+  <p>Os IGBT são comandados por <b>PWM</b> (modulação por largura de pulso). Em vez de uma onda senoidal, o inversor entrega pulsos de largura variável: pulsos mais largos no pico da onda e mais estreitos junto ao zero. O motor, por ser indutivo, "alisa" estes pulsos e a <b>corrente</b> resultante fica quase senoidal.</p>
+
+  <figure class="fig">
+  <svg viewBox="0 0 480 190" role="img" aria-label="Ilustração de modulação por largura de pulso">
+    <line x1="30" y1="95" x2="460" y2="95" stroke="#5b6b7b"/>
+    <g fill="#1673b8">
+      <rect x="38" y="45" width="4" height="50"/><rect x="58" y="45" width="8" height="50"/>
+      <rect x="78" y="45" width="12" height="50"/><rect x="98" y="45" width="16" height="50"/>
+      <rect x="118" y="45" width="18" height="50"/><rect x="138" y="45" width="18" height="50"/>
+      <rect x="160" y="45" width="16" height="50"/><rect x="182" y="45" width="12" height="50"/>
+      <rect x="204" y="45" width="8" height="50"/><rect x="226" y="45" width="4" height="50"/>
+    </g>
+    <g fill="#c0392b">
+      <rect x="258" y="95" width="4" height="50"/><rect x="278" y="95" width="8" height="50"/>
+      <rect x="298" y="95" width="12" height="50"/><rect x="318" y="95" width="16" height="50"/>
+      <rect x="338" y="95" width="18" height="50"/><rect x="358" y="95" width="18" height="50"/>
+      <rect x="380" y="95" width="16" height="50"/><rect x="402" y="95" width="12" height="50"/>
+      <rect x="424" y="95" width="8" height="50"/><rect x="446" y="95" width="4" height="50"/>
+    </g>
+    <path d="M30 95 Q135 -5 245 95 T460 95" fill="none" stroke="#0b3a6e" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="240" y="178" text-anchor="middle" font-size="12" fill="#5b6b7b">Pulsos de tensão (barras) e onda senoidal equivalente (tracejado)</text>
+  </svg>
+  <figcaption>Ilustração simplificada do PWM. Na prática os pulsos são muito mais numerosos.</figcaption>
+  </figure>
+
+  <div class="aviso"><b>Atenção:</b> a <i>frequência de chaveamento</i> dos IGBT (na ordem dos kHz) não é a <i>frequência de saída</i> do inversor (por exemplo 50 Hz). São duas grandezas diferentes e a primeira é um parâmetro ajustável.</div>
+</section>
+
+<section>
+  <h2>5. Velocidade, frequência e binário</h2>
+  <p>A velocidade síncrona do campo magnético do motor é:</p>
+  <div class="formula"><b>n<sub>s</sub> = 120 × f / p</b></div>
+  <p>Onde <b>f</b> é a frequência em Hz e <b>p</b> o número de pólos. A velocidade real do rotor é um pouco menor, por causa do escorregamento <b>s</b>:</p>
+  <div class="formula"><b>n = 120 × f × (1 − s) / p</b></div>
+
+  <h3>Calculadora de velocidade</h3>
+  <div class="calc">
+    <div><label for="f">Frequência (Hz)</label><input id="f" type="number" value="50" step="0.1"></div>
+    <div><label for="p">Número de pólos</label><input id="p" type="number" value="4" step="2"></div>
+    <div><label for="s">Escorregamento (%)</label><input id="s" type="number" value="3.3" step="0.1"></div>
+  </div>
+  <div class="res" id="res">Resultado aparece aqui.</div>
+
+  <h3>Exemplos para um motor de 4 pólos, 50 Hz (≈ 1450 rpm)</h3>
+  <ul>
+    <li><b>50 Hz:</b> rotação nominal, cerca de 1450 rpm.</li>
+    <li><b>40 Hz:</b> cerca de 1160 rpm (menos 20%), com grande poupança de energia em bombas e ventiladores.</li>
+    <li><b>25 Hz:</b> cerca de 725 rpm (50%), adequado a baixas procuras em bombas.</li>
+  </ul>
+
+  <h3>Relação tensão/frequência (V/f)</h3>
+  <p>O binário do motor depende do fluxo magnético, que é proporcional a V/f. Por isso, ao baixar a frequência, o inversor baixa a tensão na mesma proporção, mantendo V/f aproximadamente constante. Para um motor de 380 V / 50 Hz, são cerca de 7,6 V por Hz.</p>
+
+  <figure class="fig">
+  <svg viewBox="0 0 480 270" role="img" aria-label="Curva tensão frequência">
+    <line x1="60" y1="220" x2="450" y2="220" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="60" y1="220" x2="60" y2="25" stroke="#2c3e50" stroke-width="2"/>
+    <polyline points="60,205 270,50 420,50" fill="none" stroke="#1673b8" stroke-width="3"/>
+    <line x1="270" y1="50" x2="270" y2="220" stroke="#5b6b7b" stroke-dasharray="4 4"/>
+    <line x1="60" y1="50" x2="270" y2="50" stroke="#5b6b7b" stroke-dasharray="4 4"/>
+    <text x="270" y="240" text-anchor="middle" font-size="12">50 Hz (base)</text>
+    <text x="55" y="54" text-anchor="end" font-size="12">380 V</text>
+    <text x="60" y="240" text-anchor="middle" font-size="12">0</text>
+    <text x="440" y="240" text-anchor="end" font-size="12">Frequência (Hz)</text>
+    <text x="70" y="20" font-size="12">Tensão (V)</text>
+    <text x="150" y="150" font-size="12" fill="#0b3a6e">V/f constante</text>
+    <text x="320" y="40" font-size="12" fill="#b45309">acima da base: tensão fixa</text>
+    <text x="320" y="75" font-size="12" fill="#5b6b7b">(enfraquecimento de campo)</text>
+  </svg>
+  <figcaption>Curva V/f ilustrativa. A pequena tensão inicial a 0 Hz (compensação de arranque) ajuda o binário a baixas rotações.</figcaption>
+  </figure>
+
+  <p>Acima da frequência nominal a tensão já não pode subir (limitada pela rede), logo o fluxo e o binário disponíveis diminuem. É a zona de <b>enfraquecimento de campo</b>: o motor pode rodar mais depressa, mas com menos binário. Convém confirmar sempre o limite mecânico do motor e da carga.</p>
+</section>
+
+<section>
+  <h2>6. Inversor escalar e inversor vectorial</h2>
+  <div class="tabela">
+  <table>
+    <tr><th></th><th>Escalar (V/f)</th><th>Vectorial</th></tr>
+    <tr><td>Controlo</td><td>Curva V/f fixa, definida por parâmetros.</td><td>Controla separadamente a corrente que magnetiza e a que produz binário.</td></tr>
+    <tr><td>Baixas rotações</td><td>Binário limitado.</td><td>Bom binário, mesmo a baixas frequências.</td></tr>
+    <tr><td>Custo e complexidade</td><td>Menor.</td><td>Maior.</td></tr>
+    <tr><td>Aplicações típicas</td><td>Bombas, ventiladores, exaustores.</td><td>Esteiras, guindastes, máquinas com binário exigente.</td></tr>
+  </table>
+  </div>
+  <p>O vectorial pode ser em malha aberta (sem encoder) ou em malha fechada (com encoder, para precisão máxima).</p>
+</section>
+
+<section>
+  <h2>7. Blocos do inversor: CPU, IHM, interfaces e potência</h2>
+  <ul>
+    <li><b>CPU:</b> guarda os parâmetros e gera os pulsos de disparo dos IGBT.</li>
+    <li><b>IHM (interface homem-máquina):</b> display e teclas para visualizar tensão, corrente, frequência, alarmes e alterar parâmetros.</li>
+    <li><b>Interfaces:</b> entradas analógicas (0 a 10 V ou 4 a 20 mA), entradas e saídas digitais, e comunicação serial RS-485 (por exemplo Modbus) para integração com PLC.</li>
+    <li><b>Etapa de potência:</b> rectificador, barramento CC e módulo IGBT. A frequência de saída situa-se normalmente entre 0,5 e 400 Hz, conforme o modelo.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>8. Ligação eléctrica</h2>
+  <ol>
+    <li><b>Entrada de potência (R, S, T ou L, N):</b> ligada à rede através de um disjuntor ou protecção adequada. Muitos inversores pequenos aceitam alimentação monofásica 220 V e entregam saída trifásica ao motor.</li>
+    <li><b>Saída (U, V, W):</b> ligada ao motor. Trocar duas fases inverte o sentido de rotação.</li>
+    <li><b>Terra (PE):</b> sempre ligado, tanto no inversor como no motor.</li>
+    <li><b>Comando:</b> botões ou selector para avançar, recuar e parar; potenciómetro para a referência de velocidade (0 a 10 V) ou sinal de 4 a 20 mA.</li>
+    <li><b>Resistência de frenagem (opcional):</b> nos terminais indicados pelo fabricante, para cargas de grande inércia.</li>
+    <li><b>Comunicação (opcional):</b> RS-485 (terminais A+ e B−) para comando por PLC.</li>
+  </ol>
+  <div class="aviso"><b>Segurança:</b>
+    <ul>
+      <li>Depois de desligar a alimentação, aguardar alguns minutos (normalmente 5) para descarregar os condensadores do barramento CC antes de abrir o equipamento.</li>
+      <li>Não colocar contactores a abrir ou fechar entre o inversor e o motor com o inversor a funcionar.</li>
+      <li>Usar cabo blindado na saída para o motor, o mais curto possível, e respeitar as instruções do manual do fabricante.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>9. Parametrização</h2>
+  <p>Todos os ajustes são feitos por <b>parâmetros</b>, indicados no display pela letra P seguida de um número. Os nomes e números variam de marca para marca, mas os grupos principais são os mesmos:</p>
+  <div class="tabela">
+  <table>
+    <tr><th>Grupo</th><th>O que definir</th></tr>
+    <tr><td>Dados do motor</td><td>Tensão, corrente, frequência e rotação de placa.</td></tr>
+    <tr><td>Origem do comando</td><td>Teclado (local) ou terminais/comunicação (remoto).</td></tr>
+    <tr><td>Origem da referência</td><td>Teclas da IHM, potenciómetro, 4 a 20 mA ou comunicação.</td></tr>
+    <tr><td>Frequência mínima e máxima</td><td>Limites de velocidade permitidos.</td></tr>
+    <tr><td>Rampas</td><td>Tempo de aceleração e de desaceleração.</td></tr>
+    <tr><td>Protecção térmica</td><td>Corrente de sobrecarga do motor.</td></tr>
+    <tr><td>Entradas e saídas</td><td>Função de cada entrada digital e de cada relé.</td></tr>
+  </table>
+  </div>
+
+  <h3>Exemplo: inversor WEG CFW-07 (conforme o manual)</h3>
+  <ul>
+    <li>A tecla <code>P</code> alterna entre o número do parâmetro e o seu valor; as setas ▲ e ▼ alteram o valor; a tecla <code>I/O</code> habilita ou desabilita o inversor e faz o reset após um erro.</li>
+    <li>Para alterar parâmetros, o <code>P000</code> tem de estar em <b>5</b>.</li>
+    <li>Para repor os valores de fábrica: desabilitar o inversor, ajustar <code>P000 = 5</code>, ajustar <code>P204 = 5</code> e premir <code>P</code>. Todos os ajustes anteriores são perdidos.</li>
+    <li>Parâmetros de leitura úteis: <code>P003</code> corrente do motor, <code>P004</code> tensão do barramento CC, <code>P005</code> frequência aplicada ao motor, <code>P007</code> tensão de saída.</li>
+    <li>Indicações do display: <code>rdY</code> (pronto), <code>Sub</code> (tensão de rede insuficiente), <code>E02</code> e semelhantes (erro, a piscar), <code>dcbr</code> (frenagem CC) e <code>Auto</code> (auto-ajuste de parâmetros do motor).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>10. Aplicações industriais</h2>
+  <div class="cards">
+    <div class="card"><b>Fluidos</b><br>Bombas, ventiladores, exaustores, sopradores, compressores, torres de arrefecimento e AVAC.</div>
+    <div class="card"><b>Transporte e elevação</b><br>Esteiras, elevadores, pontes rolantes e guindastes, armazéns automatizados.</div>
+    <div class="card"><b>Processo</b><br>Extrusoras, misturadores e agitadores, máquinas de embalagem, moldagem por injecção, secagem e trabalho de madeira.</div>
+  </div>
+  <p>Vantagens principais: velocidade flexível com segurança e precisão, aceleração suave, frenagem directa no motor, substituição de variadores mecânicos, economia de energia e maior durabilidade de engrenagens, polias e correias.</p>
+</section>
+
+<section>
+  <h2>11. Inversor ou soft starter?</h2>
+  <div class="tabela">
+  <table>
+    <tr><th></th><th>Inversor (VFD)</th><th>Soft starter</th></tr>
+    <tr><td>O que faz</td><td>Varia a frequência e a tensão, logo a velocidade, durante todo o funcionamento.</td><td>Aumenta a tensão gradualmente só no arranque (e na paragem).</td></tr>
+    <tr><td>Velocidade em regime</td><td>Ajustável.</td><td>Fixa (a da rede).</td></tr>
+    <tr><td>Quando usar</td><td>Quando é preciso controlar velocidade ou poupar energia.</td><td>Quando só interessa suavizar o arranque.</td></tr>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>12. Como seleccionar um inversor</h2>
+  <ul>
+    <li><b>Tensão de entrada:</b> monofásica 220 V ou trifásica 380/400 V.</li>
+    <li><b>Corrente nominal:</b> escolher pela <b>corrente do motor</b> e não apenas pela potência em kW ou cv.</li>
+    <li><b>Regime de carga:</b> carga normal (bombas e ventiladores) ou carga pesada (trituradores, esteiras com carga no arranque).</li>
+    <li><b>Entradas e saídas:</b> quantas digitais e analógicas o processo exige.</li>
+    <li><b>Comunicação:</b> RS-485/Modbus se houver integração com PLC.</li>
+    <li><b>Tipo de controlo:</b> escalar ou vectorial, conforme o binário exigido a baixas rotações.</li>
+  </ul>
+  <div class="aviso"><b>Pergunta de reflexão:</b> tenho um motor de 2,2 kW. Posso comprar qualquer inversor de 2,2 kW sem olhar para a corrente e a tensão? Não: a corrente nominal do motor e a tensão da rede têm de ser compatíveis com o inversor.</div>
+</section>
+
+<section>
+  <h2>13. Integração com PLC</h2>
+  <p>O PLC pode comandar o inversor de duas formas: por <b>sinais</b> (saídas digitais do PLC para avançar, recuar e parar; saída analógica 0 a 10 V ou 4 a 20 mA para a referência de velocidade) ou por <b>comunicação serial RS-485</b> com protocolo Modbus, em que o PLC lê e escreve registos do inversor (comandos, referência, corrente, falhas).</p>
+  <p>Os parâmetros de comunicação (velocidade em baud, bits de dados, paridade, endereço) têm de ser <b>iguais no PLC e no inversor</b>.</p>
+</section>
+
+<section>
+  <h2>Resumo</h2>
+  <ul>
+    <li>O inversor converte CA em CC e depois em CA de frequência e tensão variáveis.</li>
+    <li>A velocidade do motor é proporcional à frequência; o binário é mantido pela relação V/f.</li>
+    <li>PWM com IGBT gera uma corrente quase senoidal no motor.</li>
+    <li>Poupa energia em bombas e ventiladores e protege a mecânica.</li>
+    <li>Escolhe-se pela corrente do motor, tensão da rede, tipo de carga e entradas e saídas necessárias.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <div class="w">
+    <p><a href="../index.html">← Voltar aos projectos</a> | Projecto do portfólio técnico de Gulamo Jamal | <a href="https://brevemito.com/formacao-profissional/">Formação Profissional, Brevemito</a></p>
+  </div>
+</footer>
+
+<script>
+function calcular(){
+  var f = parseFloat(document.getElementById('f').value);
+  var p = parseFloat(document.getElementById('p').value);
+  var s = parseFloat(document.getElementById('s').value);
+  var el = document.getElementById('res');
+  if (isNaN(f) || isNaN(p) || isNaN(s) || p <= 0) {
+    el.textContent = 'Preencha todos os campos com valores válidos.';
+    return;
+  }
+  var ns = 120 * f / p;
+  var n = ns * (1 - s / 100);
+  el.textContent = 'Velocidade síncrona: ' + Math.round(ns) + ' rpm | Velocidade real do rotor: ' + Math.round(n) + ' rpm';
+}
+['f','p','s'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calcular);
+});
+calcular();
+</script>
+</body>
+</html>
