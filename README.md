@@ -20,7 +20,7 @@ com esquemas, componentes e princípio de funcionamento.
 
 ## 📖 Sobre
 
-Este repositório reúne **sete projectos de comando de motores eléctricos**, pensados para estudantes, formandos e técnicos que querem compreender, interpretar e montar circuitos de comando.
+Este repositório reúne **oito projectos de comando e accionamento de motores eléctricos**, pensados para estudantes, formandos e técnicos que querem compreender, interpretar e montar circuitos de comando.
 
 Faz parte do portfólio técnico publicado na secção de **[Formação Profissional do Brevemito](https://brevemito.com/formacao-profissional/)**, da autoria de **Gulamo Jamal**.
 
@@ -37,7 +37,10 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 | 5 | **Arranque sequencial automático** | Sequência de arranque automática | [Abrir](./arranque-sequencial-automatico) |
 | 6 | **Partida estrela-triângulo** | Redução da corrente de arranque | [Abrir](./partida-estrela-triangulo) |
 | 7 | **Comando liga/desliga com sinalização** | Indicação do estado do circuito | [Abrir](./comando-liga-desliga-sinalizacao) |
+| 8 | **Inversor de frequência (VFD)** | Controlo de velocidade, PWM, ligação e parametrização | [Abrir](./inversor-de-frequencia) |
+
 ---
+
 ## 🎮 Teste os Seus Conhecimentos
 
 > **Será que domina os comandos eléctricos?** Jogue, ganhe pontos e suba de nível, de *Aprendiz* a *Engenheiro de automação*.
@@ -48,6 +51,7 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 |---|---|---|
 | 🕹️ **[Desafio do Quadro de Comando](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)** | Selo, intertravamento, estrela-triângulo, sensores, inversores e soft starter | 14 perguntas · 3 vidas · cerca de 3 min · grátis |
 | 🔜 *Em breve* | Novos desafios | |
+
 ---
 
 ## 👀 Como visualizar
@@ -73,6 +77,8 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 ├── arranque-sequencial-automatico/
 ├── partida-estrela-triangulo/
 ├── comando-liga-desliga-sinalizacao/
+├── inversor-de-frequencia/
+├── teste-os-conhecimentos/
 └── imagens/                            Diagramas partilhados
 ```
 
