@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Circuitos Eléctricos Básicos: Comandos, Potência e Motores | Brevemito</title>
-  <meta name="description" content="Projectos práticos de circuitos eléctricos: arranque directo, inversão de marcha, arranque sequencial e partida estrela-triângulo para comando e potência de motores eléctricos.">
+  <meta name="description" content="Projectos práticos de circuitos eléctricos: arranque directo, inversão de marcha, arranque sequencial, partida estrela-triângulo e inversor de frequência para comando e potência de motores eléctricos.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Circuitos Eléctricos Básicos: Comandos, Potência e Motores">
-  <meta property="og:description" content="Colecção de projectos práticos de comandos eléctricos aplicados à indústria: arranque directo, inversão de marcha, arranque sequencial e partida estrela-triângulo.">
+  <meta property="og:description" content="Colecção de projectos práticos de comandos eléctricos aplicados à indústria: arranque directo, inversão de marcha, arranque sequencial, partida estrela-triângulo e inversor de frequência.">
   <meta property="og:url" content="https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/">
   <meta property="og:image" content="arranque-direto-trifasico/arranque-direto-trifasico.png">
   <meta property="og:locale" content="pt_MZ">
@@ -36,7 +36,7 @@
     <section class="hero" id="inicio">
       <div class="container">
         <h1>Circuitos Eléctricos Básicos</h1>
-        <p>Colecção de projectos práticos de comandos eléctricos e circuitos de potência aplicados à indústria: arranque directo, inversão de marcha, arranque sequencial e partida estrela-triângulo de motores.</p>
+        <p>Colecção de projectos práticos de comandos eléctricos e circuitos de potência aplicados à indústria: arranque directo, inversão de marcha, arranque sequencial, partida estrela-triângulo e inversor de frequência para o controlo de motores.</p>
       </div>
     </section>
         <section class="quiz-banner" id="teste">
@@ -130,6 +130,45 @@
               <h3>Comando Liga/Desliga com Sinalização</h3>
               <p>Circuito de comando para ligar e desligar uma carga, com indicação visual de estado: pronto, funcionamento e falha.</p>
               <a class="btn" href="comando-liga-desliga-sinalizacao/">Ver projecto</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <svg viewBox="0 0 400 225" role="img" aria-label="Esquema de blocos de um inversor de frequência: rede, rectificador, barramento CC, inversor e motor" style="width:100%;height:auto;display:block;background:#eef5fc;">
+              <defs>
+                <marker id="setaVfd" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0b3a6e"/></marker>
+              </defs>
+              <rect x="8" y="70" width="62" height="60" rx="8" fill="#e8f1fb" stroke="#1673b8"/>
+              <text x="39" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#0b3a6e">Rede</text>
+              <text x="39" y="113" text-anchor="middle" font-size="10" fill="#1c2733">3~ 50 Hz</text>
+
+              <rect x="88" y="70" width="62" height="60" rx="8" fill="#fde9e9" stroke="#c0392b"/>
+              <text x="119" y="97" text-anchor="middle" font-size="10" font-weight="700" fill="#7b241c">Rectific.</text>
+              <text x="119" y="113" text-anchor="middle" font-size="10" fill="#1c2733">CA para CC</text>
+
+              <rect x="168" y="70" width="62" height="60" rx="8" fill="#eef1f4" stroke="#5b6b7b"/>
+              <text x="199" y="97" text-anchor="middle" font-size="10" font-weight="700" fill="#2c3e50">Barram.</text>
+              <text x="199" y="113" text-anchor="middle" font-size="10" fill="#1c2733">CC</text>
+
+              <rect x="248" y="70" width="62" height="60" rx="8" fill="#fff1d6" stroke="#d68910"/>
+              <text x="279" y="97" text-anchor="middle" font-size="10" font-weight="700" fill="#7e5109">Inversor</text>
+              <text x="279" y="113" text-anchor="middle" font-size="10" fill="#1c2733">IGBT + PWM</text>
+
+              <circle cx="357" cy="100" r="28" fill="#e3f6ef" stroke="#0f9d7a"/>
+              <text x="357" y="105" text-anchor="middle" font-size="14" font-weight="700" fill="#0b6e55">M</text>
+
+              <line x1="70" y1="100" x2="86" y2="100" stroke="#0b3a6e" stroke-width="2" marker-end="url(#setaVfd)"/>
+              <line x1="150" y1="100" x2="166" y2="100" stroke="#0b3a6e" stroke-width="2" marker-end="url(#setaVfd)"/>
+              <line x1="230" y1="100" x2="246" y2="100" stroke="#0b3a6e" stroke-width="2" marker-end="url(#setaVfd)"/>
+              <line x1="310" y1="100" x2="327" y2="100" stroke="#0b3a6e" stroke-width="2" marker-end="url(#setaVfd)"/>
+
+              <rect x="88" y="160" width="222" height="26" rx="6" fill="#0b3a6e"/>
+              <text x="199" y="177" text-anchor="middle" font-size="11" fill="#ffffff">Controlo microprocessado</text>
+            </svg>
+            <div class="project-card-body">
+              <h3>Inversor de Frequência (VFD)</h3>
+              <p>Como o inversor controla a velocidade do motor: rectificador, barramento CC, IGBT e PWM. Inclui relação V/f, ligação, parametrização, selecção e integração com PLC.</p>
+              <a class="btn" href="inversor-de-frequencia/">Ver projecto</a>
             </div>
           </article>
 
