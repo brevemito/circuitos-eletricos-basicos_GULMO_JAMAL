@@ -9,6 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Ligação de volta ao site principal, em todas as páginas
+  if (nav && !nav.querySelector(".bm-home-link")) {
+    var home = document.createElement("a");
+    home.href = "https://brevemito.com";
+    home.className = "bm-home-link";
+    home.textContent = "← Brevemito";
+    nav.appendChild(home);
+  }
+
   // Ano no rodapé
   var yearEl = document.getElementById("year");
   if (yearEl) {
