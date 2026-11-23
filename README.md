@@ -7,7 +7,7 @@
 Colecção de projectos práticos de comandos eléctricos aplicados à indústria e a instalações,
 com esquemas, componentes e princípio de funcionamento.
 
-[![Ver o site](https://img.shields.io/badge/Ver%20o%20site-GitHub%20Pages-1f6feb?style=for-the-badge)](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/)
+[![Ver o site](https://img.shields.io/badge/Ver%20o%20site-circuitos.brevemito.com-1f6feb?style=for-the-badge)](https://circuitos.brevemito.com/)
 [![Formação Profissional](https://img.shields.io/badge/Formação%20Profissional-Brevemito.com-0a7d4f?style=for-the-badge)](https://brevemito.com/formacao-profissional/)
 
 ![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=flat-square&logo=html5&logoColor=white)
@@ -45,11 +45,11 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 
 > **Será que domina os comandos eléctricos?** Jogue, ganhe pontos e suba de nível, de *Aprendiz* a *Engenheiro de automação*.
 
-[![JOGAR AGORA](https://img.shields.io/badge/JOGAR_AGORA-c8000a?style=for-the-badge)](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)
+[![JOGAR AGORA](https://img.shields.io/badge/JOGAR_AGORA-c8000a?style=for-the-badge)](https://circuitos.brevemito.com/teste-os-conhecimentos/)
 
 | Jogo | O que testa | Como é |
 |---|---|---|
-| 🕹️ **[Desafio do Quadro de Comando](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/teste-os-conhecimentos/)** | Selo, intertravamento, estrela-triângulo, sensores, inversores e soft starter | 14 perguntas · 3 vidas · cerca de 3 min · grátis |
+| 🕹️ **[Desafio do Quadro de Comando](https://circuitos.brevemito.com/teste-os-conhecimentos/)** | Selo, intertravamento, estrela-triângulo, sensores, inversores e soft starter | 14 perguntas · 3 vidas · cerca de 3 min · grátis |
 | 🔜 *Em breve* | Novos desafios | |
 
 ---
@@ -57,7 +57,7 @@ Faz parte do portfólio técnico publicado na secção de **[Formação Profissi
 ## 👀 Como visualizar
 
 **Online (recomendado):**
-👉 [brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL](https://brevemito.github.io/circuitos-eletricos-basicos_GULMO_JAMAL/)
+👉 [circuitos.brevemito.com](https://circuitos.brevemito.com/)
 
 **No seu computador:** descarregue o repositório e abra o ficheiro `index.html` no navegador.
 
