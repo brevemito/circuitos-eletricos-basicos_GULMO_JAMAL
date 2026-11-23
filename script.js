@@ -84,3 +84,60 @@ document.addEventListener("DOMContentLoaded", function () {
     rodape.parentNode.insertBefore(caixa, rodape);
   }
 });
+
+/* =========================================================================
+   Estatísticas de visitas (GoatCounter, sem cookies)
+   Todas as páginas carregam este script.js, por isso o contador fica
+   activo em todo o site sem mexer em cada index.html.
+   Painel: https://circuitos-eletricos.goatcounter.com
+   ========================================================================= */
+(function () {
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "//gc.zgo.at/count.js";
+  s.setAttribute("data-goatcounter", "https://circuitos-eletricos.goatcounter.com/count");
+  document.head.appendChild(s);
+
+  function evento(nome, titulo) {
+    try {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: "evento-" + nome, title: titulo || document.title, event: true });
+      }
+    } catch (e) { /* estatística opcional */ }
+  }
+
+  var pagina = location.pathname.split("/").filter(Boolean).pop() || "inicio";
+
+  // Cliques: anúncio do Chess.com, botões do jogo e ligações para fora do site.
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a, button");
+    if (!a) return;
+    if (a.classList.contains("bm-chess-ad-button")) return evento("anuncio-chesscom", pagina);
+    if (a.closest("#quiz")) {
+      var txt = (a.textContent || "").trim();
+      if (txt === "Começar") return evento("quiz-comecar");
+      if (txt === "Jogar outra vez") return evento("quiz-jogar-outra-vez");
+      return;
+    }
+    if (a.tagName === "A" && a.hostname && a.hostname !== location.hostname) {
+      evento("link-externo", a.hostname + " (" + pagina + ")");
+    }
+  }, true); // fase de captura: conta o clique antes de o jogo redesenhar o ecrã
+
+  // Fim do jogo «Teste os conhecimentos»: conta o resultado (sem alterar o quiz.js).
+  document.addEventListener("DOMContentLoaded", function () {
+    var quiz = document.getElementById("quiz");
+    if (!quiz || !window.MutationObserver) return;
+    var ultimo = 0;
+    new MutationObserver(function () {
+      var big = quiz.querySelector(".quiz-big");
+      if (!big || Date.now() - ultimo < 3000) return;
+      ultimo = Date.now();
+      var tag = quiz.querySelector(".quiz-tag");
+      var p = quiz.querySelector("#quizBody p");
+      var pct = p && p.textContent.match(/\((\d+)%\)/);
+      var faixa = pct ? (+pct[1] >= 85 ? "85-100%" : +pct[1] >= 65 ? "65-84%" : +pct[1] >= 40 ? "40-64%" : "0-39%") : "?";
+      evento("quiz-fim", (tag ? tag.textContent : "") + " · " + faixa);
+    }).observe(quiz, { childList: true, subtree: true });
+  });
+})();
